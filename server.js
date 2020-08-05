@@ -29,7 +29,8 @@ app.use(generationsRoutes);
 const evolutionsRoutes = require('./routes/evolutions');
 app.use(evolutionsRoutes);
 
-
+const typesRoutes = require('./routes/types');
+app.use(typesRoutes);
 
 
 
