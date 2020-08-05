@@ -1,0 +1,22 @@
+body {
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+
+h1 {
+    font-family: 'Fjalla One', sans-serif;
+
+}
+
+#i {
+    color: red;
+}
+
+#pikachu-icon {
+    width: 10%;
+}
+
+.main-nav {
+    text-align: center;
+}
