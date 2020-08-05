@@ -32,6 +32,8 @@ app.use(evolutionsRoutes);
 const typesRoutes = require('./routes/types');
 app.use(typesRoutes);
 
+const mapsRoutes = require('./routes/maps');
+app.use(mapsRoutes);
 
 
 app.get('/', (req, res) => {
