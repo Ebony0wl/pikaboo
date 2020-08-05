@@ -18,7 +18,7 @@ app.use(methodOverride('_method')); // must become before our routes for PUT/PAT
 app.use(express.urlencoded({ extended: true })); // nested properties in JSON objects can be accessed
 
 const pokemonsRoutes = require('./routes/pokemon');
-
+app.use(pokemonsRoutes);
 
 
 
