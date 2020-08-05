@@ -6,7 +6,6 @@ const methodOverride = require('method-override');
 const PORT = process.env.PORT || 3000;
 
 
-
 require('dotenv').config();
 
 // Express Middleware
@@ -18,7 +17,7 @@ app.use(express.json());
 app.use(methodOverride('_method')); // must become before our routes for PUT/PATCH routes
 app.use(express.urlencoded({ extended: true })); // nested properties in JSON objects can be accessed
 
-
+const pokemonsRoutes = require('./routes/pokemon');
 
 
 
