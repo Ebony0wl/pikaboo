@@ -20,6 +20,15 @@ app.use(express.urlencoded({ extended: true })); // nested properties in JSON ob
 const pokemonsRoutes = require('./routes/pokemon');
 app.use(pokemonsRoutes);
 
+const locationsRoutes = require('./routes/location');
+app.use(locationsRoutes);
+
+const generationsRoutes = require('./routes/generations');
+app.use(generationsRoutes);
+
+
+
+
 
 
 
