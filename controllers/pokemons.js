@@ -1,5 +1,6 @@
 const api = 'https://pokeapi.co/api/v2/pokemon';
 const axios = require('axios');
+const { response } = require('express');
 
 // const config = {
 //   method: 'get',
@@ -35,8 +36,23 @@ const index = (req, res) => {
     });
 };
 
-const show = (req, res) => {
-    res.json('this will render a specific pokemon!');
+const show = async (req, res) => {
+    const id = req.params.id
+    console.log(id)
+
+    try { 
+        const foundPokemon = await axios.get(`${api}/${id}`);
+        // console.log(foundPokemon.data.forms[0].name);
+        res.json({
+            pokemon: foundPokemon.data,
+            name: foundPokemon.data.forms[0].name
+        });
+    } catch (err) {
+        res.json({
+            status: 404,
+            message: 'Internal Server Error'
+        });
+    }
 };
 
 module.exports = {
