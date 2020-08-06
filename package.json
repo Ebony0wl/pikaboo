@@ -1,0 +1,28 @@
+{
+  "name": "pikaboo",
+  "version": "1.0.0",
+  "description": "Pokemon search website",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ebony0wl/pikaboo.git"
+  },
+  "keywords": [
+    "pokemon"
+  ],
+  "author": "Ebony Warren, Mark Calvelo, Nisa Cheng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ebony0wl/pikaboo/issues"
+  },
+  "homepage": "https://github.com/Ebony0wl/pikaboo#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0"
+  }
+}
