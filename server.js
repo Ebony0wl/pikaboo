@@ -38,6 +38,9 @@ app.use(mapsRoutes);
 const itemsRoutes = require('./routes/items');
 app.use(itemsRoutes);
 
+const movesRoutes = require('./routes/moves');
+app.use(movesRoutes);
+
 
 app.get('/', (req, res) => {
     res.status(200).json({
