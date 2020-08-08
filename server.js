@@ -35,6 +35,9 @@ app.use(typesRoutes);
 const mapsRoutes = require('./routes/maps');
 app.use(mapsRoutes);
 
+const itemsRoutes = require('./routes/items');
+app.use(itemsRoutes);
+
 
 app.get('/', (req, res) => {
     res.status(200).json({
