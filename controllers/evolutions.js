@@ -18,8 +18,25 @@ const index = (req, res) => {
     });
 }
 
-const show = (req, res) => {
-    res.json('this will render a specific evolution!');
+const show = async (req, res) => {
+    const id = req.params.id;
+    console.log(id, ' <-- req.params.id');
+
+    try {
+        const foundEvolution = await axios.get(`${api}/${id}`);
+        console.log(foundEvolution.data, '<-- english information')
+        res.json({
+            evolution: foundEvolution.data,
+            evolves_to: foundEvolution.data.chain.evolves_to,
+            species: foundEvolution.data.species,
+        });
+    } catch (err) {
+        console.log(err);
+        res.json ({
+            status: 500,
+            message: 'Internal Server Error'
+        });
+    }
 }
 
 module.exports = {
