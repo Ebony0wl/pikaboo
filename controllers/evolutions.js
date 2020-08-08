@@ -1,11 +1,42 @@
-const api = 'https://pokeapi.co/api/v2/';
+const api = 'https://pokeapi.co/api/v2/evolution-chain';
+const axios = require('axios');
 
 const index = (req, res) => {
-    res.json('this will render a list of evolutions!');
+    axios
+    .get(api + '/?limit=419')
+    .then((response) => {
+        res.json({
+            evolutions: response.data.results
+        });
+    })
+    .catch( (err) => {
+        console.log(err);
+        res.json ({
+            status: 500,
+            message: 'Internal Server Error'
+        });
+    });
 }
 
-const show = (req, res) => {
-    res.json('this will render a specific evolution!');
+const show = async (req, res) => {
+    const id = req.params.id;
+    console.log(id, ' <-- req.params.id');
+
+    try {
+        const foundEvolution = await axios.get(`${api}/${id}`);
+        console.log(foundEvolution.data, '<-- english information')
+        res.json({
+            evolution: foundEvolution.data,
+            evolves_to: foundEvolution.data.chain.evolves_to,
+            species: foundEvolution.data.species,
+        });
+    } catch (err) {
+        console.log(err);
+        res.json ({
+            status: 500,
+            message: 'Internal Server Error'
+        });
+    }
 }
 
 module.exports = {
