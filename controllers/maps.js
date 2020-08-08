@@ -1,7 +1,22 @@
-const api = 'https://pokeapi.co/api/v2/';
+const api = 'https://pokeapi.co/api/v2/region';
+const axios = require('axios');
+const { response } = require('express');
 
 const index = (req, res) => {
-    res.json('this will render a list of maps!');
+    axios
+    .get(api)
+    .then( (response) => {
+        res.json({
+            maps: response.data.results
+        })
+    })
+    .catch( (err) => {
+        console.log(err);
+        res.json({
+            status: 500,
+            message: 'Internal Server Error'
+        });
+    });
 }
 
 const show = (req, res) => {
