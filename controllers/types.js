@@ -12,7 +12,7 @@ const index = (req, res) => {
     .catch( (err) => {
         console.log(err);
         res.json ({
-            status: 404,
+            status: 500,
             message: 'Internal Server Error'
         });
     });
@@ -32,7 +32,7 @@ const show = async (req, res) => {
     } catch (err) {
         console.log(err);
         res.json ({
-            status: 404,
+            status: 500,
             message: 'Internal Server Error'
         });
     }
