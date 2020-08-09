@@ -21,7 +21,8 @@ const { response } = require('express');
 
 const index = (req, res) => {
     axios
-    .get(api + '?limit=151&offset=0')
+    //.get(api + '?limit=151&offset=0')
+    .get(api)
     .then( (response) => {
         // res.json({
         //     pokemon: response.data.results
@@ -31,7 +32,7 @@ const index = (req, res) => {
         const pokemonData = response.data.results;
         const input = req.body.searchInput;
         console.log(input);
-        res.render('pokemon/index', {pokemon: input});
+        res.render('pokemons/index', {url: input});
     })
     .catch( (err) => {
         console.log(err);

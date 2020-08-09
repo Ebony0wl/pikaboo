@@ -1,11 +1,18 @@
 <%- include('../partials/header.ejs') %>
 
-<h1>Popular Pokemon</h1>
-
-<div>
-    <% pokemon.forEach(p => { %>
-    <div><%= p.name %></div>
-    <% }) %>
-</div>
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="robots" content="noindex, nofollow">
+        <meta http-equiv="refresh" content="1;url=<%= url %>">
+        <script type="text/javascript">
+            window.location.href = "<%= url%>"
+        </script>
+    </head>
+    <body>
+        If you are not redirected automatically, <a href="<%= url %>">click here</a>.
+    </body>
+</html>
 
 <%- include('../partials/footer.ejs') %>
