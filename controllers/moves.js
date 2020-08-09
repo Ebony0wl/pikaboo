@@ -18,10 +18,26 @@ const index = (req, res) => {
     });
 }
 
-const show = (req, res) => {
-    res.json({
-        message: 'Show will render a specific move!'
-    })
+const show = async (req, res) => {
+    const id = req.params.id;
+    console.log(id, ' <-- req.params.id');
+
+    try {
+        const foundMove = await axios.get(`${api}/${id}`);
+        console.log(foundMove.data.names[7], '<-- english information')
+        res.json({
+            move: foundMove.data,
+            name: foundMove.data.name,
+            type: foundMove.data.type,
+            accuracy: foundMove.accuracy
+        });
+    } catch (err) {
+        console.log(err);
+        res.json ({
+            status: 500,
+            message: 'Internal Server Error'
+        });
+    }
 }
 
 module.exports = {
