@@ -17,6 +17,8 @@ app.use(express.json());
 app.use(methodOverride('_method')); // must become before our routes for PUT/PATCH routes
 app.use(express.urlencoded({ extended: true })); // nested properties in JSON objects can be accessed
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 const pokemonsRoutes = require('./routes/pokemon');
 app.use(pokemonsRoutes);
 
@@ -43,9 +45,10 @@ app.use(movesRoutes);
 
 
 app.get('/', (req, res) => {
-    res.status(200).json({
-        message: 'root url needs to res.render home.ejs'
-    })
+    res.render('index')
+    // res.status(200).json({
+    //     message: 'root url needs to res.render home.ejs'
+    // })
 });
 
 app.listen(PORT, () => {
