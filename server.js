@@ -3,6 +3,11 @@ const app = express();
 const path = require('path');
 const methodOverride = require('method-override');
 
+//for input form parsing
+var bodyParser = require('body-parser');
+var multer = require('multer');
+var upload = multer();
+
 const PORT = process.env.PORT || 3000;
 
 
@@ -44,12 +49,25 @@ const movesRoutes = require('./routes/moves');
 app.use(movesRoutes);
 
 
+//**Added functions to parse form data */
+// for parsing application/json
+app.use(bodyParser.json()); 
+
+// for parsing application/xwww-
+app.use(bodyParser.urlencoded({ extended: true })); 
+app.use(express.urlencoded({extended: true}));
+//form-urlencoded
+
+// for parsing multipart/form-data
+app.use(upload.array());
+
 app.get('/', (req, res) => {
-    res.render('index')
+    res.render('index.ejs');
     // res.status(200).json({
     //     message: 'root url needs to res.render home.ejs'
     // })
 });
+
 
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);

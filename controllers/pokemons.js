@@ -23,9 +23,15 @@ const index = (req, res) => {
     axios
     .get(api + '?limit=50&offset=0')
     .then( (response) => {
-        res.json({
-            pokemon: response.data.results
-        });
+        // res.json({
+        //     pokemon: response.data.results
+        // });
+
+        //render the ejs file
+        const pokemonData = response.data.results;
+        const input = req.body.searchInput;
+        console.log(input);
+        res.render('pokemon/index', {pokemon: input});
     })
     .catch( (err) => {
         console.log(err);
@@ -34,6 +40,7 @@ const index = (req, res) => {
             message: 'Internal Server Error'
         });
     });
+
 };
 
 const show = async (req, res) => {
@@ -47,6 +54,7 @@ const show = async (req, res) => {
             pokemon: foundPokemon.data,
             name: foundPokemon.data.forms[0].name
         });
+        //console.log('pokemon: ' + name);
     } catch (err) {
         res.json({
             status: 500,
@@ -54,6 +62,7 @@ const show = async (req, res) => {
         });
     }
 };
+
 
 module.exports = {
     index,

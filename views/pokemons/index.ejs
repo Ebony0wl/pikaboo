@@ -2,4 +2,10 @@
 
 <h1>Popular Pokemon</h1>
 
+<div>
+    <% pokemon.forEach(p => { %>
+    <div><%= p.name %></div>
+    <% }) %>
+</div>
+
 <%- include('../partials/footer.ejs') %>
