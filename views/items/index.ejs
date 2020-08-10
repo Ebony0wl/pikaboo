@@ -1,0 +1,13 @@
+<%- include('../partials/header.ejs') %>
+    <body>
+        <ol>
+            <% for (let i = 0; i < 20; i ++) { %>
+                <p>
+                <%= items[Math.floor((Math.random() * items.length ))].name %>
+                </p>
+            <% } %>
+        </ol>
+    </body>
+</html>
+
+<%- include('../partials/footer.ejs') %>

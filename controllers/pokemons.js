@@ -65,6 +65,7 @@ const show = async (req, res) => {
     console.log(id)
 
     try { 
+        //pokemon
         const foundPokemon = await axios.get(`${api}/${id}`);
         // res.json({
         //     pokemon: foundPokemon.data,
@@ -77,6 +78,7 @@ const show = async (req, res) => {
         const type = foundPokemon.data.types;
         const species = foundPokemon.data.species;
         const speciesURL = foundPokemon.data.species.url;
+        const pokemonPic = foundPokemon.data.sprites.front_default;
 
         //pokemon-species
         const foundSpecies = await axios.get(speciesURL);
@@ -110,7 +112,6 @@ const show = async (req, res) => {
         generationData = foundGeneration.data;
         region = foundGeneration.data.main_region;
         
-
 //{“linktojson”: “filelink.json”}
 
         res.render('pokemons/pokemon_index.ejs', {
@@ -118,7 +119,8 @@ const show = async (req, res) => {
             type,
             generationName,
             region,
-            chain
+            chain,
+            pokemonPic
         });
         
     } catch (err) {

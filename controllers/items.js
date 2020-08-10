@@ -5,8 +5,11 @@ const index = (req, res) => {
     axios
     .get(api + '/?limit=954')
     .then((response) => {
-        res.json({
-            items: response.data.results
+        // res.json({
+        //     items: response.data.results
+        // });
+        res.render('items/index.ejs', {
+            items: response.data.results,    
         });
     })
     .catch( (err) => {
@@ -25,12 +28,20 @@ const show = async (req, res) => {
     try {
         const foundItem = await axios.get(`${api}/${id}`);
         console.log(foundItem.data.names[7], '<-- english information')
-        res.json({
-            type: foundItem.data,
-            name: foundItem.data.name,
-            category_name: foundItem.data.category.name,
-            sprites: foundItem.data.sprites
-        });
+        // res.json({
+        //     item: foundItem.data,
+        //     name: foundItem.data.name,
+        //     category_name: foundItem.data.category.name,
+        //     sprites: foundItem.data.sprites,
+        //     cost: foundItem.data.cost
+        // });
+        res.render('items/show', {
+                type: foundItem.data,
+                name: foundItem.data.name,
+                category_name: foundItem.data.category.name,
+                sprites: foundItem.data.sprites,
+                cost: foundItem.data.cost
+            });
     } catch (err) {
         console.log(err);
         res.json ({
