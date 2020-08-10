@@ -78,12 +78,32 @@ const show = async (req, res) => {
         const species = foundPokemon.data.species;
         const speciesURL = foundPokemon.data.species.url;
 
+        //pokemon-species
         const foundSpecies = await axios.get(speciesURL);
-        console.log(speciesURL);
-        res.json({
-                data: foundSpecies.data,
-                evolution: foundSpecies.data
-             });
+        // res.json({
+        //         data: foundSpecies.data,
+        //         evolutionURL: foundSpecies.data.evolution_chain.url,
+        //         generation: foundSpecies.data.generation,
+        //         generationURL: foundSpecies.data.generation.url
+        //      });
+       
+        const speciesData = foundSpecies.data;
+        const evolutionURL = foundSpecies.data.evolution_chain.url;
+        const generation = foundSpecies.data.generation;
+        const generationURL = foundSpecies.data.generation.url;
+
+        //evolution-chain
+        const foundEvolution = await axios.get(evolutionURL);
+        // res.json({
+        //         data: foundEvolution.data,
+        //         chain: foundEvolution.data.chain // data is in nested 'evolves_to' groups 
+        //      });
+        const data = foundEvolution.data;
+        const chain = foundEvolution.data.chain; // data is in nested 'evolves_to' groups 
+
+
+        //Generation
+        const foundGeneration = await axios.get(generationURL);
         
 
 //{“linktojson”: “filelink.json”}
