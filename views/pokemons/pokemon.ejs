@@ -1,4 +1,18 @@
 <%- include('../partials/header.ejs') %>
-<h1>Pokemon</h1>
+<h1>Pokemon: <%=name%></h1>
+
+<h3>Types</h3>
+<ol>
+
+     <% type.forEach(t => { %>
+        <li><%= t.type.name %></li>
+    <% }) %>
+
+</ol>
+<h3>Evolution Chain</h3>
+
+<h3>Generation</h3>
+
+<h3>Location</h3>
 
 <%- include('../partials/footer.ejs') %>

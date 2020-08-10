@@ -45,10 +45,10 @@ const post = (req, res) => {
         // });
 
         //render the ejs file
-        const pokemonData = response.data.results;
         const input = req.body.searchInput;
         console.log(input);
         res.render('pokemons/index', {url: input});
+
     })
     .catch( (err) => {
         console.log(err);
@@ -66,12 +66,33 @@ const show = async (req, res) => {
 
     try { 
         const foundPokemon = await axios.get(`${api}/${id}`);
-        // console.log(foundPokemon.data.forms[0].name);
+        // res.json({
+        //     pokemon: foundPokemon.data,
+        //     name: foundPokemon.data.forms[0].name,
+        //     type: foundPokemon.data.types,
+        //     species: foundPokemon.data.species
+        // });
+        const pokemon = foundPokemon.data;
+        const name = foundPokemon.data.forms[0].name;
+        const type = foundPokemon.data.types;
+        const species = foundPokemon.data.species;
+        const speciesURL = foundPokemon.data.species.url;
+
+        const foundSpecies = await axios.get(speciesURL);
+        console.log(speciesURL);
         res.json({
-            pokemon: foundPokemon.data,
-            name: foundPokemon.data.forms[0].name
+                data: foundSpecies.data,
+                evolution: foundSpecies.data
+             });
+        
+
+//{“linktojson”: “filelink.json”}
+
+        res.render('pokemons/pokemon.ejs', {
+            name: name,
+            type: type
         });
-        //console.log('pokemon: ' + name);
+        
     } catch (err) {
         res.json({
             status: 500,
