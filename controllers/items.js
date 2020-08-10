@@ -5,8 +5,11 @@ const index = (req, res) => {
     axios
     .get(api + '/?limit=954')
     .then((response) => {
-        res.json({
-            items: response.data.results
+        // res.json({
+        //     items: response.data.results
+        // });
+        res.render('items/index.ejs', {
+            items: response.data.results,    
         });
     })
     .catch( (err) => {
