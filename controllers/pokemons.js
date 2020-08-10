@@ -67,9 +67,10 @@ const show = async (req, res) => {
     try { 
         const foundPokemon = await axios.get(`${api}/${id}`);
         // console.log(foundPokemon.data.forms[0].name);
-        res.json({
+        res.render('pokemon_index', { 
             pokemon: foundPokemon.data,
-            name: foundPokemon.data.forms[0].name
+            name:  foundPokemon.data.forms[0].name,
+            type:  foundPokemon.data.types,
         });
         //console.log('pokemon: ' + name);
     } catch (err) {
