@@ -113,7 +113,7 @@ const show = async (req, res) => {
 
 //{“linktojson”: “filelink.json”}
 
-        res.render('pokemons/pokemon.ejs', {
+        res.render('pokemons/pokemon_index.ejs', {
             name,
             type,
             generationName,
