@@ -72,7 +72,7 @@ const show = async (req, res) => {
         //     type: foundPokemon.data.types,
         //     species: foundPokemon.data.species
         // });
-        const pokemon = foundPokemon.data;
+        const pokemonData = foundPokemon.data;
         const name = foundPokemon.data.forms[0].name;
         const type = foundPokemon.data.types;
         const species = foundPokemon.data.species;
@@ -83,13 +83,13 @@ const show = async (req, res) => {
         // res.json({
         //         data: foundSpecies.data,
         //         evolutionURL: foundSpecies.data.evolution_chain.url,
-        //         generation: foundSpecies.data.generation,
+        //         generation: foundSpecies.data.generation.name,
         //         generationURL: foundSpecies.data.generation.url
         //      });
        
         const speciesData = foundSpecies.data;
         const evolutionURL = foundSpecies.data.evolution_chain.url;
-        const generation = foundSpecies.data.generation;
+        const generationName = foundSpecies.data.generation.name;
         const generationURL = foundSpecies.data.generation.url;
 
         //evolution-chain
@@ -98,19 +98,24 @@ const show = async (req, res) => {
         //         data: foundEvolution.data,
         //         chain: foundEvolution.data.chain // data is in nested 'evolves_to' groups 
         //      });
-        const data = foundEvolution.data;
+        const evolutionData = foundEvolution.data;
         const chain = foundEvolution.data.chain; // data is in nested 'evolves_to' groups 
-
-
         //Generation
         const foundGeneration = await axios.get(generationURL);
+        // res.json({
+        //         data: foundGeneration.data,
+        //         region: foundGeneration.data.main_region,
+        //         generation: foundGeneration.data.name
+        //     });
+        generationData = foundGeneration.data;
+        region = foundGeneration.data.main_region;
         
 
 //{“linktojson”: “filelink.json”}
 
         res.render('pokemons/pokemon.ejs', {
-            name: name,
-            type: type
+            name,
+            type
         });
         
     } catch (err) {
