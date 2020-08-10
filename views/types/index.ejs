@@ -1,9 +1,9 @@
+<%- include('../partials/head.ejs') %>
 <body>
-    <%- include('../partials/header.ejs') %>
+    <%- include('../partials/head.ejs') %>
 
-    
-
-
-    <%- include('../partials/footer.ejs') %>
+    <% types.forEach(t => { %>
+        <p><%= t.name %></p>
+    <% }) %>
 </body>
-
+<%- include('../partials/footer.ejs') %>
