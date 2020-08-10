@@ -18,8 +18,24 @@ const { response } = require('express');
 //   console.log(error);
 // });
 
-
 const index = (req, res) => {
+    axios
+    .get(api + '?limit=151&offset=0')
+    .then( (response) => {
+        res.json({
+            pokemon: response.data.results
+        });
+    })
+    .catch( (err) => {
+        console.log(err);
+        res.json ({
+            status: 500,
+            message: 'Internal Server Error'
+        });
+    });
+};
+
+const post = (req, res) => {
     axios
     //.get(api + '?limit=151&offset=0')
     .get(api)
@@ -67,5 +83,6 @@ const show = async (req, res) => {
 
 module.exports = {
     index,
+    post,
     show
 }
