@@ -1,0 +1,15 @@
+<%- include('../partials/header.ejs') %>
+    <body>
+        <h1>Generations</h1>
+        <div>
+            <ol>
+                <% for (let i = 0; i < generations.length; i++) { %>
+                <h2>Name: <%= generations[i].name %></h1> 
+                    <h3><a href="generations/<%= i + 1 %>"> Show Page </a></h3>
+                <% } %>
+            </ol>
+        </div>
+    </body>
+</html>
+
+<%- include('../partials/footer.ejs') %>
