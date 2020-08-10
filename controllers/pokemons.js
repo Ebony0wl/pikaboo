@@ -115,7 +115,10 @@ const show = async (req, res) => {
 
         res.render('pokemons/pokemon.ejs', {
             name,
-            type
+            type,
+            generationName,
+            region,
+            chain
         });
         
     } catch (err) {
