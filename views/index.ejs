@@ -27,10 +27,10 @@
             </header>  
             <div class ="container">
 
-                <form id="searchEng">
-                    <input type="text" id="searchInput" name="searchInput" placeholder=" &#128269; Who's that pokemon!?"><br>
-                    <button id="submit" type="submit">I choose you! <img id="submitImage" src="/images/pokeball.svg" alt=""></button>
-                  </form>
+                <form id="searchEng" action="/pokemon" method="post">
+                    <input type="text" id="searchInput" name="searchInput" placeholder=" &#128269; Who's that pokemon!?" ><br>
+                    <button id="submit" type="submit" formaction="/pokemon/">I choose you! <img id="submitImage" src="/images/pokeball.svg" alt=""></button>
+                </form>
 
             </div>
     
@@ -45,6 +45,7 @@
             <span>&copy;New Challenger Approaches <br> Nisa Cheng, Mark Calvelo, Ebony Warren</span>
            
         </footer>
+
     </body>
 </html>
 
