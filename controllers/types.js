@@ -5,10 +5,14 @@ const index = (req, res) => {
     axios
     .get(api + '?limit=50&offset=0')
     .then((response) => {
-        res.json({
-            types: response.data.results
-        });
-        
+        // res.json({
+        //     types: response.data.results
+        // });
+        const types = response.data.results;
+        res.render('types/index', {
+            types 
+        })
+
     })
     .catch( (err) => {
         console.log(err);

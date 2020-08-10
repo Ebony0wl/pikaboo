@@ -1,11 +1,18 @@
-<%- include('partials/header.ejs') %>
 
 <!DOCTYPE html>
 <html lang="en">
-    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>PikaBoo</title>
+                    <link rel="icon" href="/icon_path" type="images/pikachu.svg">
+                    <link rel="stylesheet" href="/style/style.css">
+                    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Fjalla+One&display=swap" rel="stylesheet">
+    </head>
     <body>
+    
         <div class="wrap"> 
-
+         <%- include('partials/header.ejs') %>
             <div class ="container">
 
                 <form id="searchEng" action="/pokemon" method="post">
@@ -17,8 +24,7 @@
     
     
         </div>
-    
+        <%- include('partials/footer.ejs') %>
     </body>
 </html>
 
-<%- include('partials/footer.ejs') %>
