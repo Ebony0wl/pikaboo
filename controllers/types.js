@@ -8,6 +8,7 @@ const index = (req, res) => {
         res.json({
             types: response.data.results
         });
+        
     })
     .catch( (err) => {
         console.log(err);
