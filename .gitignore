@@ -117,3 +117,6 @@ dist
 
 # DS STORE
 .DS_Store
+
+# package-lock.json that is created after npm install
+package-lock.json
