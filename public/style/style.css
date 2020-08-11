@@ -29,6 +29,76 @@ h2 {
     margin-top: 0;
 }
 
+
+
+
+#searchResults {
+    font-family: 'Archivo Narrow', sans-serif;
+    color: white;
+    margin-bottom: -5%;
+    font-size: 4vw;
+    text-align: center;
+}
+
+#card {
+    background-color: rgba(255,255,255,0.7);
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10%;
+    border-radius: 2px;
+    
+
+}
+
+#pokeName {
+    font-family: 'Archivo Narrow', sans-serif;
+    color: white;
+    margin-top: 0;
+    margin-bottom: -4%;
+    text-align: center;
+}
+
+#upperName {
+    text-transform: uppercase;
+}
+
+#typeDisplay {
+    text-align: center;
+    color: white;
+    font-family: 'Archivo Narrow', sans-serif;
+    background-color: rgb(105,190,251);
+}
+
+
+.pokeInfo {
+    text-align: center;
+    color: white;
+    font-family: 'Archivo Narrow', sans-serif;
+    margin-top: -5%;
+    font-size: 3.5vw;
+    background-color: rgba(105,190,251);
+}
+
+
+
+
+#pokeSprite {
+    padding: 0;
+    margin-bottom: -5%;
+    margin-left: 36%;
+    width: 30%;
+    text-align: center;
+}
+
+
+h3 {
+
+    font-family: 'Archivo Narrow', sans-serif;
+    color: white;
+    margin-top: 0;
+
+}
+
 #pikachu-icon {
     width: 8%;
 
@@ -138,8 +208,56 @@ input[type="text"] {
 		width: 80%;
 		max-width: 1150px;
 		margin: 0 auto;
-	}
- 
+    }
+    
+
+#searchResults {
+
+    font-size: 3vw;
+
+}
+
+#card {
+    width: 55%;
+    margin-left: 25%;
+    margin-top: 10%;
+}
+
+#pokeSprite {
+    padding: 0;
+    margin-bottom: -7%;
+    margin-left: 40%;
+    width: 20%;
+    text-align: center;
+}
+
+#pokeName {
+    font-family: 'Archivo Narrow', sans-serif;
+    color: white;
+    margin-top: 50px;
+    margin-bottom: -2%;
+    text-align: center;
+    font-size: 1.7vw;
+}
+
+#typeDisplay {
+    font-size: 1.5vw;
+    margin-right: 0;
+    margin-top: 10%;
+    margin-bottom: -2%;
+    color: white;
+
+
+}
+
+
+.pokeInfo {
+    margin-top: -2%;
+    font-size: 1.5vw;
+    margin-bottom: -2%;
+    background-color: rgba(105,190,251);
+
+}
 
 
 .name {
