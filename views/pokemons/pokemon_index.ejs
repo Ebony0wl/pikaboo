@@ -5,6 +5,8 @@
   
     <div class="container">
         <h1> Search Results for.. <%= name %> </h1>
+        <br>
+        <h1>Pokemon: <%=name%> <img id="pokeSprite" src = "<%= pokemonPic %>" alt = "Pokemon Image"> </h1>
         
         <p> Type: <% type.forEach(t => { %>
         <%= t.type.name %> 
