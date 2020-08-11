@@ -34,3 +34,16 @@ const put = async (req, res) => {
         })
     }
 }
+
+const deleteUser = (req, res) => {
+    return console.log(
+        `DELETE HTTP Request for user/${req.params.userId} resource`
+    );
+}
+
+module.exports = {
+    index,
+    post,
+    put,
+    deleteUser
+}
