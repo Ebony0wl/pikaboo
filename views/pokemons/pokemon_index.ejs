@@ -4,14 +4,22 @@
         <%- include('../partials/header.ejs') %>
   
     <div class="container">
-        <h1> Search Results for.. <%= name %> </h1>
-        <br>
-        <h1>Pokemon: <%=name%> <img id="pokeSprite" src = "<%= pokemonPic %>" alt = "Pokemon Image"> </h1>
         
-        <p> Type: <% type.forEach(t => { %>
+        <h2 id="searchResults"> Search Results for.. <%= name %> </h2>
+        <br>
+    
+        <h2 id="pokeName">Pokemon: <span id="upperName"> <%=name%> </span> </h2>
+        <div id="card">
+        <img id="pokeSprite" src = "<%= pokemonPic %>" alt = "Pokemon Image">
+        
+        <p id="typeDisplay"> Type: <% type.forEach(t => { %>
         <%= t.type.name %> 
         <% }) %>    </p>
 
+        <p class="pokeInfo">Generation: <%= generationName %></p> 
+        <p class="pokeInfo">Location: <%= region.name %></p>
+
+    </div>
     </div>
     </div>
 </body>
