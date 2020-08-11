@@ -3,13 +3,13 @@
 <body>
     <div class="wrap">
         <%- include('../partials/header.ejs') %>
-        <h2>Type: <%= name %></h2>
-            <ol>
+        <div class="index-title"><h2>Type: <%= name %></h2></div>
+        <div class="flex-container">
                 <% pokemon.forEach(p => { %>
-                    <div><%= p.pokemon.name %></div>
+                    <div><a href="/pokemon/<%= p.pokemon.name %>" class = "index-items"><%= p.pokemon.name %></a></div>
                 <% }) %>
-            </ol>
         </div>
+    </div>
 </body>
 <%- include('../partials/footer.ejs') %>
 

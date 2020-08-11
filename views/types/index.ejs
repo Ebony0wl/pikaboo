@@ -2,11 +2,14 @@
 <body>
     <div class="wrap">
     <%- include('../partials/header.ejs') %>
-        <ol>
-            <% types.forEach(t => { %>
-                <div><a href="types/<%= t.name %>"> <%= t.name %></a></div>
-            <% }) %>
-        </ol>
+    <div class="index-title"><h2>Types</h2></div>
+        <div class="flex-container">
+    
+                <% types.forEach(t => { %>
+                    <div><a href="/types/<%= t.name %>" class = "index-items"> <%= t.name %></a></div>
+                <% }) %>
+     
+        </div>
     </div>
 </body>
 <%- include('../partials/footer.ejs') %>
