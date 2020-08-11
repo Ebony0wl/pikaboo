@@ -1,7 +1,15 @@
  <%- include('../partials/head.ejs') %>
-    <body>
+ 
+<body>
+    <div class="wrap">
         <%- include('../partials/header.ejs') %>
-
+        <h2>Type: <%= name %></h2>
+            <ol>
+                <% pokemon.forEach(p => { %>
+                    <div><%= p.pokemon.name %></div>
+                <% }) %>
+            </ol>
+        </div>
 </body>
 <%- include('../partials/footer.ejs') %>
 

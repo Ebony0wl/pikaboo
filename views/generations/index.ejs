@@ -1,15 +1,17 @@
-<%- include('../partials/header.ejs') %>
+<%- include('../partials/head.ejs') %>
     <body>
+        <div class=wrap>
+        <%- include('../partials/header.ejs') %>
         <h1>Generations</h1>
         <div>
             <ol>
                 <% for (let i = 0; i < generations.length; i++) { %>
-                <h2>Name: <%= generations[i].name %></h1> 
+                <h2>Name: <%= generations[i].name %></h2> 
                     <h3><a href="generations/<%= i + 1 %>"> Show Page </a></h3>
                 <% } %>
             </ol>
         </div>
+    </div>
     </body>
-</html>
 
 <%- include('../partials/footer.ejs') %>

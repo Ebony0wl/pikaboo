@@ -30,10 +30,19 @@ const show = async (req, res) => {
     try {
         const foundType = await axios.get(`${api}/${id}`);
         console.log(foundType.data.names[6], '<-- english information')
-        res.json({
-            type: foundType.data,
-            name: foundType.data.names[6].name
-        });
+        // res.json({
+        //     type: foundType.data,
+        //     name: foundType.data.names[6].name,
+        //     pokemon: foundType.data.pokemon
+        // });
+
+            const type= foundType.data;
+            const name= foundType.data.names[6].name;
+            const pokemon = foundType.data.pokemon;
+        res.render('types/type',{
+            name,
+            pokemon
+        })
     } catch (err) {
         console.log(err);
         res.json ({
