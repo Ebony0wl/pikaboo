@@ -1,11 +1,8 @@
-<%- include('partials/header.ejs') %>
-
-<!DOCTYPE html>
-<html lang="en">
-    
+<%- include('partials/head.ejs') %>
     <body>
+    
         <div class="wrap"> 
-
+         <%- include('partials/header.ejs') %>
             <div class ="container">
 
                 <form id="searchEng" action="/pokemon" method="post">
@@ -16,8 +13,7 @@
             </div>
     
         </div>
-    
-    </body>
-</html>
+        </body>
+        <%- include('partials/footer.ejs') %>
 
-<%- include('partials/footer.ejs') %>
+

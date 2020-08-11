@@ -3,7 +3,7 @@
 
 body {
     margin: 0 auto;
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 100%;
     background-position: center center;
     background-image: url("../images/pokemon.png");

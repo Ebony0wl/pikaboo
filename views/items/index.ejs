@@ -1,5 +1,7 @@
-<%- include('../partials/header.ejs') %>
+<%- include('../partials/head.ejs') %>
     <body>
+        <div class="wrap">
+        <%- include('../partials/header.ejs') %>
         <ol>
             <% for (let i = 0; i < 20; i ++) { %>
                 <p>
@@ -7,7 +9,7 @@
                 </p>
             <% } %>
         </ol>
+        </div>
     </body>
-</html>
 
 <%- include('../partials/footer.ejs') %>

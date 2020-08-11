@@ -1,8 +1,12 @@
-<%- include('../partials/header.ejs') %>
-
+<%- include('../partials/head.ejs') %>
 <body>
-
-    
+    <div class="wrap">
+    <%- include('../partials/header.ejs') %>
+        <ol>
+            <% types.forEach(t => { %>
+                <div><a href="types/<%= t.name %>"> <%= t.name %></a></div>
+            <% }) %>
+        </ol>
+    </div>
 </body>
-
 <%- include('../partials/footer.ejs') %>

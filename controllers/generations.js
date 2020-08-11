@@ -5,7 +5,10 @@ const index = (req, res) => {
     axios
     .get(api)
     .then((response) => {
-        res.json({
+        // res.json({
+        //     generations: response.data.results
+        // });
+        res.render('generations/index', {
             generations: response.data.results
         });
     })
