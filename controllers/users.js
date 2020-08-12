@@ -1,5 +1,7 @@
 const User = require('../models/Users');
 
+const firebase = require('../config/firebase');
+
 const index = (req, res) => {
     console.log('Index GET Request on User resource');
     res.json({
@@ -19,6 +21,18 @@ const post = async (req, res) => {
             message: 'Internal Server Error'
         })
     }
+}
+
+const signup = (req, res, next) => {
+    console.log(req.body, ' <-- req.body');
+    firebase.doCreateUserWithEmailAndPassword(req.body.email, req.body.password)
+    .then( (authUser) => {
+        console.log(authUser);
+    })
+    .catch( (err) => {
+        req.app.locals.err = err.message
+        res.redirect('/');
+    })
 }
 
 const put = async (req, res) => {
@@ -44,6 +58,7 @@ const deleteUser = (req, res) => {
 module.exports = {
     index,
     post,
+    signup,
     put,
     deleteUser
 }
