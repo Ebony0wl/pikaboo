@@ -11,6 +11,7 @@ const index = (req, res) => {
     });
 }
 
+// NOT FOR FIREBASE - DO NOT RENDER
 const post = async (req, res) => {
     try {
         const createdUser = await User.create(req.body);
@@ -66,6 +67,7 @@ const signIn = (req, res) => {
     });
 }
 
+// NOT FOR FIREBASE - DO NOT RENDER
 const put = async (req, res) => {
     try {
         console.log(req.body);
@@ -80,6 +82,7 @@ const put = async (req, res) => {
     }
 }
 
+// NOT FOR FIREBASE - DO NOT RENDER
 const deleteUser = (req, res) => {
     return console.log(
         `DELETE HTTP Request for user/${req.params.userId} resource`
