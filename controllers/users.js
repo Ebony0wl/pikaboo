@@ -25,25 +25,25 @@ const post = async (req, res) => {
     }
 }
 
-const signUp = (req, res, next) => {
-    console.log(req.body, ' <-- req.body');
-    firebase.doCreateUserWithEmailAndPassword(req.body.email, req.body.password)
-    .then( (authUser) => {
-        console.log(authUser.user.uid);
-        firebase.doCreateUser(authUser.user.uid ,{
-            email: req.body.email,
-            username: req.body.username
-        }).then(snapShot => {
-            res.redirect(`/users/${authUser.user.uid}`);
-        }).catch(err => {
-            console.log(err);
-        })
-    })
-    .catch( (err) => {
-        req.app.locals.err = err.message
-        res.redirect('/signup');
-    })
-}
+// const signUp = (req, res, next) => {
+//     console.log(req.body, ' <-- req.body');
+//     firebase.doCreateUserWithEmailAndPassword(req.body.email, req.body.password)
+//     .then( (authUser) => {
+//         console.log(authUser.user.uid);
+//         firebase.doCreateUser(authUser.user.uid ,{
+//             email: req.body.email,
+//             username: req.body.username
+//         }).then(snapShot => {
+//             res.redirect(`/users/${authUser.user.uid}`);
+//         }).catch(err => {
+//             console.log(err);
+//         })
+//     })
+//     .catch( (err) => {
+//         req.app.locals.err = err.message
+//         res.redirect('/signup');
+//     })
+// }
 
 const show = async (req, res) => {
     console.log(req.params.id, ' <-- req.params.id');
@@ -54,18 +54,18 @@ const show = async (req, res) => {
     });
 }
 
-const signIn = (req, res) => {
-    firebase.doSignInWithEmailAndPassword(req.body.email, req.body.password)
-    .then(authUser => {
-        console.log(authUser)
-        res.redirect(`/users/${authUser.user.uid}`);
-    })
-    .catch(err => {
-        console.log(err);
-        res.app.locals.err = err.message;
-        res.redirect('/signin');
-    });
-}
+// const signIn = (req, res) => {
+//     firebase.doSignInWithEmailAndPassword(req.body.email, req.body.password)
+//     .then(authUser => {
+//         console.log(authUser)
+//         res.redirect(`/users/${authUser.user.uid}`);
+//     })
+//     .catch(err => {
+//         console.log(err);
+//         res.app.locals.err = err.message;
+//         res.redirect('/signin');
+//     });
+// }
 
 // NOT FOR FIREBASE - DO NOT RENDER
 const put = async (req, res) => {
@@ -92,8 +92,6 @@ const deleteUser = (req, res) => {
 module.exports = {
     index,
     post,
-    signUp,
-    signIn,
     show,
     put,
     deleteUser
