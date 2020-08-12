@@ -12,7 +12,8 @@ const signUp = (req, res, next) => {
             email: req.body.email,
             username: req.body.username
         }).then(snapShot => {
-            res.redirect(`/users/${authUser.user.uid}`);
+            // res.redirect(`/users/${authUser.user.uid}`);
+            res.redirect('/')
         }).catch(err => {
             console.log(err);
         })

@@ -49,6 +49,7 @@ const show = async (req, res) => {
     console.log(req.params.id, ' <-- req.params.id');
     const user = await firebase.doGetUser(req.params.id);
     console.log(user.data(), ' <---- ');
+    console.log(user.data().email, ' <--- email of user')
     res.render('users/show', {
         user: user.data()
     });
