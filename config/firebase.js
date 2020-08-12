@@ -1,6 +1,7 @@
 const app = require('firebase/app');
 
-require('firebase/auth')
+require('firebase/auth');
+require('firebase/firestore');
 
 const config = {
     apiKey: process.env.API_KEY,
@@ -16,10 +17,22 @@ class Firebase {
     constructor() {
         app.initializeApp(config)
         this.auth = app.auth()
+        this.db = app.firestore()
     }
+
+    //  ** Auth API **
 
     doCreateUserWithEmailAndPassword = (email, password) => {
         return this.auth.doCreateUserWithEmailAndPassword(email, password);
+    }
+
+    doGetUser = (id) => {
+        return this.db.collection('users').doc(id).get();
+    }
+
+    // ** User API **
+    doCreateUser = (user) => {
+        return this.db.collection('users').doc(id).set(user);
     }
 }
 
