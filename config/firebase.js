@@ -30,6 +30,10 @@ class Firebase {
         return this.db.collection('users').doc(id).get();
     }
 
+    doSignInWithEmailAndPassword = (email, password) => {
+        return this.auth.signInWithEmailAndPassword(email, password);
+    }
+
     // ** User API **
     doCreateUser = (user) => {
         return this.db.collection('users').doc(id).set(user);

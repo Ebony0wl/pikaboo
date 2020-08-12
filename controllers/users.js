@@ -24,7 +24,7 @@ const post = async (req, res) => {
     }
 }
 
-const signup = (req, res, next) => {
+const signUp = (req, res, next) => {
     console.log(req.body, ' <-- req.body');
     firebase.doCreateUserWithEmailAndPassword(req.body.email, req.body.password)
     .then( (authUser) => {
@@ -40,7 +40,7 @@ const signup = (req, res, next) => {
     })
     .catch( (err) => {
         req.app.locals.err = err.message
-        res.redirect('/');
+        res.redirect('/signup');
     })
 }
 
@@ -50,6 +50,19 @@ const show = async (req, res) => {
     console.log(user.data(), ' <---- ');
     res.render('users/show', {
         user: user.data()
+    });
+}
+
+const signIn = (req, res) => {
+    firebase.doSignInWithEmailAndPassword(req.body.email, req.body.password)
+    .then(authUser => {
+        console.log(authUser)
+        res.redirect(`/users/${authUser.user.uid}`);
+    })
+    .catch(err => {
+        console.log(err);
+        res.app.locals.err = err.message;
+        res.redirect('/signin');
     });
 }
 
@@ -76,7 +89,8 @@ const deleteUser = (req, res) => {
 module.exports = {
     index,
     post,
-    signup,
+    signUp,
+    signIn,
     show,
     put,
     deleteUser
