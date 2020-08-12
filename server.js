@@ -59,7 +59,11 @@ app.use(itemsRoutes);
 const movesRoutes = require('./routes/moves');
 app.use(movesRoutes);
 
+const userRoutes = require('./routes/users');
+app.use(userRoutes);
 
+const authRoutes = require('./routes/auth');
+app.use(authRoutes);
 
 // for parsing multipart/form-data
 app.use(upload.array());
