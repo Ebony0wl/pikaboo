@@ -3,6 +3,12 @@ const app = express();
 const path = require('path');
 const methodOverride = require('method-override');
 
+require('dotenv').config();
+
+console.log(process.env);
+
+const firebase = require('./config/firebase');
+
 //for input form parsing
 var bodyParser = require('body-parser');
 var multer = require('multer');
@@ -10,8 +16,6 @@ var upload = multer();
 
 const PORT = process.env.PORT || 3000;
 
-
-require('dotenv').config();
 
 // Express Middleware
 app.set('views', path.join(__dirname, 'views'));
