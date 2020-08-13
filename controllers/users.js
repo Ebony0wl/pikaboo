@@ -17,11 +17,12 @@ const post = async (req, res) => {
         const createdUser = await User.create(req.body);
         res.json(createdUser)
     } catch (err) {
+        res.render('error', {err});
         console.log(err);
-        res.json({
-            status: 500,
-            message: 'Internal Server Error'
-        })
+        // res.json({
+        //     status: 500,
+        //     message: 'Internal Server Error'
+        // });
     }
 }
 
@@ -75,6 +76,7 @@ const put = async (req, res) => {
         const updatedUser = await User.findByIdAndUpdate(req.params.userId, req.body, { new: true });
         res.json(updatedUser);
     } catch (err) {
+        res.render('error', {err});
         console.log(err);
         res.json({
             status: 500,
