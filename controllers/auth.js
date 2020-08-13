@@ -20,7 +20,8 @@ const signUp = (req, res, next) => {
     })
     .catch( (err) => {
         req.app.locals.err = err.message
-        res.redirect('/signup');
+        console.log(err.message)
+        res.redirect('/');
     })
 }
 
