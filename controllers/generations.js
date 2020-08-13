@@ -14,11 +14,12 @@ const index = (req, res) => {
         });
     })
     .catch( (err) => {
+        res.render('error', {err});
         console.log(err);
-        res.json ({
-            status: 500,
-            message: 'Internal Server Error'
-        });
+        // res.json ({
+        //     status: 500,
+        //     message: 'Internal Server Error'
+        // });
     });
 }
 
@@ -44,11 +45,12 @@ const show = async (req, res) => {
             pokemon: foundGeneration.data.pokemon_species
         })
     } catch (err) {
+        res.render('error', {err});
         console.log(err);
-        res.json ({
-            status: 500,
-            message: 'Internal Server Error'
-        });
+        // res.json ({
+        //     status: 500,
+        //     message: 'Internal Server Error'
+        // });
     }
 }
 

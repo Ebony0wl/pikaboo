@@ -20,18 +20,20 @@ const { response } = require('express');
 
 const index = (req, res) => {
     axios
-    .get(api + '?limit=151&offset=0')
+    .get(api)
     .then( (response) => {
-        res.json({
-            pokemon: response.data.results
-        });
+        res.render('pokemon/index')
+        // res.json({
+        //     pokemon: response.data.results
+        // });
     })
     .catch( (err) => {
         console.log(err);
-        res.json ({
-            status: 500,
-            message: 'Internal Server Error'
-        });
+        res.render('error', {err});
+        // res.json ({
+        //     status: 500,
+        //     message: 'Internal Server Error'
+        // });
     });
 };
 
@@ -52,10 +54,11 @@ const post = (req, res) => {
     })
     .catch( (err) => {
         console.log(err);
-        res.json ({
-            status: 500,
-            message: 'Internal Server Error'
-        });
+        res.render('error',{err});
+        // res.json ({
+        //     status: 500,
+        //     message: 'Internal Server Error'
+        // });
     });
 
 };
@@ -124,10 +127,11 @@ const show = async (req, res) => {
         });
         
     } catch (err) {
-        res.json({
-            status: 500,
-            message: 'Internal Server Error'
-        });
+        res.render('error', {err});
+        // res.json({
+        //     status: 500,
+        //     message: 'Internal Server Error'
+        // });
     }
 };
 
