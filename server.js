@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const session = require('express-session');
 const methodOverride = require('method-override');
 
 require('dotenv').config();
@@ -73,10 +74,6 @@ app.get('/', (req, res) => {
     // res.status(200).json({
     //     message: 'root url needs to res.render home.ejs'
     // })
-});
-
-app.get('/signin', (req, res) => {
-    res.render('signin/index')
 });
 
 
