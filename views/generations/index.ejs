@@ -3,12 +3,13 @@
         <div class=wrap>
         <%- include('../partials/header.ejs') %>
         <div class="index-title"><h2>Generations</h2></div>
-        <div class="flex-container">
+        <div class="genCont flex-container">
                 <% for (let i = 0; i < generations.length; i++) { %>
                     <div><a href="generations/<%= i + 1 %>" class = "index-items" style="text-transform: uppercase;">  <%= generations[i].name %> </a></div>
                 <% } %>
             
-        </div>
+    </div>
+    </div>
     </div>
     </body>
 
