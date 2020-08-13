@@ -21,10 +21,17 @@ const PORT = process.env.PORT || 3000;
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs'); // express will always look for ejs file views
 // app.use(express.static(path.join(__dirname, 'public')));
+
+//**Added functions to parse form data */
+// for parsing application/json
 app.use(express.json());
 
 app.use(methodOverride('_method')); // must become before our routes for PUT/PATCH routes
+
+// for parsing application/xwww-
 app.use(express.urlencoded({ extended: true })); // nested properties in JSON objects can be accessed
+// form-urlencoded
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -52,14 +59,11 @@ app.use(itemsRoutes);
 const movesRoutes = require('./routes/moves');
 app.use(movesRoutes);
 
+const userRoutes = require('./routes/users');
+app.use(userRoutes);
 
-//**Added functions to parse form data */
-// for parsing application/json
-app.use(bodyParser.json()); 
-
-// for parsing application/xwww-
-app.use(express.urlencoded({extended: true}));
-//form-urlencoded
+const authRoutes = require('./routes/auth');
+app.use(authRoutes);
 
 // for parsing multipart/form-data
 app.use(upload.array());
