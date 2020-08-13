@@ -1,14 +1,20 @@
 <%- include('../partials/head.ejs') %>
-    <body>
-        <div class="wrap">
-
+<body>
+    <div class="wrap">
         <%- include('../partials/header.ejs') %>
-        <div>
-            <h1><%= name %></h1> <img src="<%= sprites.default %>" alt="">
-            <h2>Category: <%= category_name %></h2>
-            <h3>Cost: $<%= cost %></h3>
-        </div>
-        </div>
-    </body>
+  
+    <div class="container">
+        
+    
+        <h2 id="pokeName">Item: <span > <%=name%> </span> </h2>
+        <div id="card">
+        <img id="pokeSprite" src = "<%= sprites.default %>" alt = "Pokemon ItemImage">
 
+        <p id="typeDisplay">Category: <%= category_name %></p> 
+        <p class="pokeInfo" style="padding-top: 8px;">Cost: <%= cost %></p>
+
+    </div>
+    </div>
+    </div>
+</body>
 <%- include('../partials/footer.ejs') %>

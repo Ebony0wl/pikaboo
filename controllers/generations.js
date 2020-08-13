@@ -1,5 +1,6 @@
 const api = 'https://pokeapi.co/api/v2/generation';
-const axios = require('axios')
+const axios = require('axios');
+const pokemons = require('./pokemons');
 
 const index = (req, res) => {
     axios
@@ -28,11 +29,20 @@ const show = async (req, res) => {
     try {
         const foundGeneration = await axios.get(`${api}/${id}`);
         console.log(foundGeneration.data.names[5], '<-- english information')
-        res.json({
+        // res.json({
+        //     type: foundGeneration.data,
+        //     main_region: foundGeneration.data.main_region.name,
+        //     url: foundGeneration.data.main_region.url,
+        //     generation: foundGeneration.data.names[5].name,
+        //     pokemon: foundGeneration.data.pokemon_species //pokemon[].name
+        // });
+        res.render('generations/generation',{
             type: foundGeneration.data,
-            name: foundGeneration.data.main_region.name,
-            url: foundGeneration.data.main_region.url
-        });
+            main_region: foundGeneration.data.main_region.name,
+            url: foundGeneration.data.main_region.url,
+            generation: foundGeneration.data.names[5].name,
+            pokemon: foundGeneration.data.pokemon_species
+        })
     } catch (err) {
         console.log(err);
         res.json ({
