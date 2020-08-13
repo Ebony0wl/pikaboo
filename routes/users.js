@@ -7,6 +7,6 @@ const usersController = require('../controllers/users');
     Will wait for firebase authorization tutorial later today
 */
 
-router.post('/signup', usersController.signup);
+router.get('/users/:id', usersController.show);
 
 module.exports = router;
