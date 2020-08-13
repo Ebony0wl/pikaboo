@@ -208,7 +208,8 @@ input[type="text"] {
     .flex-container{
         display: flex;
         flex-wrap: wrap;
-        /* background-color: rgb(33, 140, 228); */
+        width: 80%;
+        margin-left: 1%;
         padding-left: 100px;
         padding-right: 100px;
     }
@@ -231,6 +232,7 @@ input[type="text"] {
     .flex-container div {
         background-color:rgba(235, 232, 50, 0.918);
         width: auto;
+        height: 1.3vw;
         margin: 10px;
         text-align: center;
         line-height: 35px;
@@ -267,15 +269,14 @@ input[type="text"] {
 }
 
 #card {
-    width: 55%;
-    margin-left: 25%;
+    width: 40%;
+    margin-left: 32%;
     margin-top: 10%;
 }
 
 #pokeSprite {
     padding: 0;
     margin-bottom: -7%;
-    margin-left: 40%;
     width: 20%;
     text-align: center;
 }
@@ -303,8 +304,9 @@ input[type="text"] {
 .pokeInfo {
     margin-top: -2%;
     font-size: 1.5vw;
-    margin-bottom: -2%;
     background-color: rgba(105,190,251);
+    margin-bottom: -1%;
+    padding: 1%;
 
 }
 
@@ -363,13 +365,16 @@ li
 
  #submit {
     width: 15%;
-    left: -8%;
     font-size: 1vw;
+    margin-left: 22%;
  }
 
  .main-footer {
     font-size: 1vw;
-    margin-left: 5%;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
 }
 
 
@@ -385,4 +390,3 @@ a:hover {
 }
 
 
-  }
