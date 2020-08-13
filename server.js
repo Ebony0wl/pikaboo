@@ -75,6 +75,10 @@ app.get('/', (req, res) => {
     // })
 });
 
+app.get('/signin', (req, res) => {
+    res.render('signin/index')
+});
+
 
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
