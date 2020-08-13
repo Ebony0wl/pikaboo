@@ -2,14 +2,12 @@
     <body>
         <div class=wrap>
         <%- include('../partials/header.ejs') %>
-        <h1>Generations</h1>
-        <div>
-            <ol>
+        <div class="index-title"><h2>Generations</h2></div>
+        <div class="flex-container">
                 <% for (let i = 0; i < generations.length; i++) { %>
-                <h2>Name: <%= generations[i].name %></h2> 
-                    <h3><a href="generations/<%= i + 1 %>"> Show Page </a></h3>
+                    <div><a href="generations/<%= i + 1 %>" class = "index-items" style="text-transform: uppercase;">  <%= generations[i].name %> </a></div>
                 <% } %>
-            </ol>
+            
         </div>
     </div>
     </body>

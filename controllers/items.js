@@ -1,6 +1,14 @@
 const api = 'https://pokeapi.co/api/v2/item';
 const axios = require('axios')
 
+function shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+}
+
 const index = (req, res) => {
     axios
     .get(api + '/?limit=954')
@@ -8,8 +16,9 @@ const index = (req, res) => {
         // res.json({
         //     items: response.data.results
         // });
+        let items= response.data.results;
         res.render('items/index.ejs', {
-            items: response.data.results,    
+            items: shuffle(items)    
         });
     })
     .catch( (err) => {
@@ -35,6 +44,7 @@ const show = async (req, res) => {
         //     sprites: foundItem.data.sprites,
         //     cost: foundItem.data.cost
         // });
+
         res.render('items/show', {
                 type: foundItem.data,
                 name: foundItem.data.name,
