@@ -1,18 +1,15 @@
-<%- include('../partials/header.ejs') %>
-
-<!DOCTYPE HTML>
-<html lang="en-US">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="robots" content="noindex, nofollow">
-        <meta http-equiv="refresh" content="1;url=<%= url %>">
-        <script type="text/javascript">
-            window.location.href = "<%= url%>"
-        </script>
-    </head>
+<%- include('../partials/head.ejs') %>
     <body>
-        If you are not redirected automatically, <a href="<%= url %>">click here</a>.
+        <div class=wrap>
+        <%- include('../partials/header.ejs') %>
+        <div class="index-title"><h2>Pokemons</h2></div>
+        <div class="flex-container">
+            <% names.forEach(n => { %>
+                <div><a href="/pokemons/<%= n.name %>" class = "index-items"> <%= n.name %></a></div>
+            <% }) %>
+            
+        </div>
+    </div>
     </body>
-</html>
 
 <%- include('../partials/footer.ejs') %>

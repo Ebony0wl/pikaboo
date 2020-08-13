@@ -20,9 +20,9 @@ const { response } = require('express');
 
 const index = (req, res) => {
     axios
-    .get(api)
+    .get(api + '?limit=151&offset=0')
     .then( (response) => {
-        res.render('pokemon/index')
+        res.render('pokemons/index',{names: response.data.results })
         // res.json({
         //     pokemon: response.data.results
         // });
@@ -39,8 +39,7 @@ const index = (req, res) => {
 
 const post = (req, res) => {
     axios
-    //.get(api + '?limit=151&offset=0')
-    .get(api)
+    .get(api + '?limit=151&offset=0')
     .then( (response) => {
         // res.json({
         //     pokemon: response.data.results
@@ -49,7 +48,7 @@ const post = (req, res) => {
         //render the ejs file
         const input = req.body.searchInput;
         console.log(input);
-        res.render('pokemons/index', {url: input});
+        res.render('pokemons/redirect', {url: input});
 
     })
     .catch( (err) => {
