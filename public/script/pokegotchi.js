@@ -6,15 +6,28 @@
 */
 
 // const api = an api thing here
+// const Pokegotchi = foundPokegotchi
 
 class Pokegotchi {
     constructor(name) {
         this.name = name;
+        this.species = species;
         this.timesFed = 0;
         this.evolutionLevel = 1;
     }
 
     feed() {
         this.timesFed += 1;
+    }
+}
+
+class Game {
+    constructor(pokegotchi) {
+        this.pokegotchi = pokegotchi
+    }
+    
+    start(name) {
+        this.name = pokegotchi.name;
+        
     }
 }
