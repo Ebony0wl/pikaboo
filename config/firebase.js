@@ -38,6 +38,19 @@ class Firebase {
     doCreateUser = (user) => {
         return this.db.collection('users').doc(id).set(user);
     }
+
+    doLikePokemon = (pokemonId, userId) => {
+        return this.db
+        .collection('pokemon')
+        .doc(movieId)
+        .set(
+            {
+                likes: app.firestore.FieldValue.arrayUnion(userId)
+            },
+            { merge: true }
+        )
+    }
+
 }
 
 const firebase = new Firebase();
