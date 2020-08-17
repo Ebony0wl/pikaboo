@@ -42,13 +42,25 @@ class Firebase {
     doLikePokemon = (pokemonId, userId) => {
         return this.db
         .collection('pokemon')
-        .doc(movieId)
+        .doc(pokemonId)
         .set(
             {
                 likes: app.firestore.FieldValue.arrayUnion(userId)
             },
             { merge: true }
-        )
+        );
+    }
+
+    doUnlikePokemon = (pokemonId, userId) => {
+        return this.db
+        .collection('pokemon')
+        .doc(pokemonId)
+        .set(
+            {
+                likes: app.firestore.FieldValue.arrayRemove(userId)
+            },
+            { merge: true }
+        );
     }
 
 }
