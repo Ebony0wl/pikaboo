@@ -13,4 +13,8 @@ class Pokegotchi {
         this.timesFed = 0;
         this.evolutionLevel = 1;
     }
+
+    feed() {
+        this.timesFed += 1;
+    }
 }
