@@ -13,6 +13,10 @@ const signUp = (req, res, next) => {
             username: req.body.username
         }).then(snapShot => {
             // res.redirect(`/users/${authUser.user.uid}`);
+            req.session.user = {
+                email: req.body.email,
+                uid: authUser.user.uid
+            }
             res.redirect('/')
         }).catch(err => {
             console.log(err);
@@ -28,7 +32,10 @@ const signUp = (req, res, next) => {
 const signIn = (req, res) => {
     firebase.doSignInWithEmailAndPassword(req.body.email, req.body.password)
     .then(authUser => {
-        console.log(authUser)
+        console.log(authUser);
+        req.session.user = {
+            uid: authUser.user.uid,
+        }
         res.redirect(`/users/${authUser.user.uid}`);
     })
     .catch(err => {
