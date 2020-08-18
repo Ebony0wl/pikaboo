@@ -1,11 +1,22 @@
 <%- include('../partials/head.ejs') %>
+
+<header class="main-header">
+    <div class="container clearfix">
+        <h1 class="name"> PikaBoo </h1> 
+        <img id="pikachu-icon" src="/images/pikachu.svg" alt="pikachu-head-icon">
+     </div>
+  </header>
 <body>
     <div class="wrap">
-    <%- include('../partials/header.ejs') %>
         <h2><%= user.username %></h2>
-        <h3>Your Pokemon</h3>
-        <p>Click here to learn more about your pokemon :3</p>
-        <button >pokemon playground</button>
+        <br>
+        <h3 id="pokeGachaName">Your Pokemon</h3>
+        <p id="pokemonShow">Click here to learn more about your pokemon :3</p>
+        <img class="pokeGacha" src="https://i.gifer.com/WnES.gif" alt="pokemonPlaceholder">
+        <br>
+        <button id="feedButton"> Feed </button>
+        <br>
+        <button id="shareButton"> Share ➤ </button>
 
     </div>
-<%- include('../partials/footer.ejs') %>
+
