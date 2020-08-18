@@ -33,19 +33,27 @@ app.use(methodOverride('_method')); // must become before our routes for PUT/PAT
 app.use(express.urlencoded({ extended: true })); // nested properties in JSON objects can be accessed
 // form-urlencoded
 
-// app.use(session({
-//     secret: 'pikachu secret',
-//     resave: false,
-//     saveUninitialized: true
-//   }));
-
-// app.use((req, res, next) => {
-//     res.locals.title = 'Pikaboo App';
-//     res.locals.user = req.session.user;
-//     next();
-// })
-
 app.use(express.static(path.join(__dirname, 'public')));
+
+// middleware for user session
+app.use(session({
+    secret: 'pikachu secret',
+    resave: false,
+    saveUninitialized: false
+  }));
+
+app.use((req, res, next) => {
+    res.locals.title = 'Pikaboo App';
+    res.locals.user = req.session.user;
+    next();
+})
+
+app.use((req, res, next) => {
+    res.locals.user = req.session.user;
+    next();
+});
+
+
 
 const pokemonsRoutes = require('./routes/pokemon');
 app.use(pokemonsRoutes);
@@ -81,18 +89,30 @@ app.use(authRoutes);
 app.use(upload.array());
 
 app.get('/', (req, res) => {
-    res.render('index.ejs');
-    // res.status(200).json({
-    //     message: 'root url needs to res.render home.ejs'
-    // })
+    res.render('index', {
+        title: 'Pikaboo Search App',
+        error: req.app.locals.err
+    });
 });
 
 app.get('/signin', (req, res) => {
-    res.render('signin/index');
+    if (req.session.user) {
+        return res.redirect(`/users/${req.session.user.uid}`);
+    }
+
+    res.render('signin/index', {
+        error: req.app.locals.err
+    });
 });
 
 app.get('/signup', (req, res) => {
-    res.render('signup/index');
+    if (req.session.user) {
+        return res.redirect(`/users/${req.session.user.uid}`);
+    }
+    
+    res.render('signup/index', {
+        error: req.app.locals.err
+    });
 })
 
 
