@@ -33,19 +33,27 @@ app.use(methodOverride('_method')); // must become before our routes for PUT/PAT
 app.use(express.urlencoded({ extended: true })); // nested properties in JSON objects can be accessed
 // form-urlencoded
 
-// app.use(session({
-//     secret: 'pikachu secret',
-//     resave: false,
-//     saveUninitialized: true
-//   }));
-
-// app.use((req, res, next) => {
-//     res.locals.title = 'Pikaboo App';
-//     res.locals.user = req.session.user;
-//     next();
-// })
-
 app.use(express.static(path.join(__dirname, 'public')));
+
+// middleware for user session
+app.use(session({
+    secret: 'pikachu secret',
+    resave: false,
+    saveUninitialized: false
+  }));
+
+app.use((req, res, next) => {
+    res.locals.title = 'Pikaboo App';
+    res.locals.user = req.session.user;
+    next();
+})
+
+app.use((req, res, next) => {
+    res.locals.user = req.session.user;
+    next();
+});
+
+
 
 const pokemonsRoutes = require('./routes/pokemon');
 app.use(pokemonsRoutes);
