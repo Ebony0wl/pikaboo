@@ -2,6 +2,7 @@ const api = 'https://pokeapi.co/api/v2/pokemon';
 const axios = require('axios');
 const { response } = require('express');
 const firebase = require('../config/firebase');
+const evolutions = require('./evolutions');
 
 // const config = {
 //   method: 'get',
@@ -18,6 +19,9 @@ const firebase = require('../config/firebase');
 // .catch(function (error) {
 //   console.log(error);
 // });
+
+
+
 
 const index = (req, res) => {
     axios
@@ -106,6 +110,33 @@ const show = async (req, res) => {
         //      });
         const evolutionData = foundEvolution.data;
         const chain = foundEvolution.data.chain; // data is in nested 'evolves_to' groups 
+        const baseEvolution = chain;
+        const secondEvolution = chain?.evolves_to;
+        //const evolves_to3 = chain.evolves_to[0]?.evolves_to;
+        console.log('Base: ', baseEvolution.species.name);
+
+        let firstEvo =[];
+        if(secondEvolution){
+            firstEvo = secondEvolution.map(evolution => {
+                console.log('Second: ', evolution.species.name);
+                if(evolution.evolves_to){
+                    evolution.evolves_to.map(eve =>{
+                        console.log('3rd: ', eve.species.name);
+                    });
+                }
+                //return evolution.species.name;
+            });
+            // if (evolves_to3){
+            //     evlove3 = evolves_to3.map(evolution => {
+            //         console.log(evolution.species.name);
+            //         //return evolution.species.name;
+            //     });
+            // };
+        }
+
+
+
+
         //Generation
         const foundGeneration = await axios.get(generationURL);
         // res.json({
