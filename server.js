@@ -89,10 +89,10 @@ app.use(authRoutes);
 app.use(upload.array());
 
 app.get('/', (req, res) => {
-    res.render('index.ejs');
-    // res.status(200).json({
-    //     message: 'root url needs to res.render home.ejs'
-    // })
+    res.render('index', {
+        title: 'Pikaboo Search App',
+        error: req.app.locals.err
+    });
 });
 
 app.get('/signin', (req, res) => {
