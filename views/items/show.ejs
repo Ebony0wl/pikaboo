@@ -10,7 +10,7 @@
         <div id="card">
         <img id="pokeSprite" src = "<%= sprites.default %>" alt = "Pokemon ItemImage">
 
-        <p id="typeDisplay">Category: <%= category_name %></p> 
+        <p id="typeDisplay">Category: <%= category_name.replace(/-/g," ") %></p> 
         <p class="pokeInfo" style="padding-top: 8px;">Cost: <%= cost %></p>
 
     </div>

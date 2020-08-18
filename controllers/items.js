@@ -22,8 +22,8 @@ const index = (req, res) => {
         });
     })
     .catch( (err) => {
-        res.render('error', {err});
         console.log(err);
+        res.render('error', {err});
         // res.json ({
         //     status: 500,
         //     message: 'Internal Server Error'
@@ -48,7 +48,7 @@ const show = async (req, res) => {
 
         res.render('items/show', {
                 type: foundItem.data,
-                name: foundItem.data.name,
+                name: foundItem.data.names[7].name,
                 category_name: foundItem.data.category.name,
                 sprites: foundItem.data.sprites,
                 cost: foundItem.data.cost
