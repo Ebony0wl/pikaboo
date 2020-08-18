@@ -82,6 +82,7 @@ const show = async (req, res) => {
         //     species: foundPokemon.data.species
         // });
         const pokemonData = foundPokemon.data;
+        const pokemonId = foundPokemon.data.id
         const name = foundPokemon.data.forms[0].name;
         const type = foundPokemon.data.types;
         const species = foundPokemon.data.species;
@@ -151,6 +152,7 @@ const show = async (req, res) => {
 
         res.render('pokemons/pokemon_index.ejs', {
             name,
+            id: pokemonId,
             type,
             generationName,
             region,
