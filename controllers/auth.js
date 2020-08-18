@@ -14,7 +14,11 @@ function randomElement(arr) {
 const signUp = (req, res, next) => {
     console.log(req.body, ' <-- req.body');
     req.app.locals.err = '';
+
     const babyPokemon = ['bulbasaur', 'charmander', 'squirtle'];
+    const heldPokemonName = babyPokemon[randomElement(babyPokemon)];
+
+
     firebase.doCreateUserWithEmailAndPassword(req.body.email, req.body.password)
     .then( (authUser) => {
         console.log(authUser);
@@ -23,7 +27,7 @@ const signUp = (req, res, next) => {
             email: req.body.email,
             id: authUser.user.uid,
             username: req.body.username,
-            heldPokemon: api + babyPokemon[randomElement(babyPokemon)]
+            heldPokemonName: heldPokemonName,
         }).then(snapShot => {
             // res.redirect(`/users/${authUser.user.uid}`);
             console.log('we are about to got to req.session.user in this promise')
