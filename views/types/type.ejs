@@ -6,7 +6,7 @@
         <div class="index-title"><h2>Type: <%= name %></h2></div>
         <div class=" typeCont flex-container">
                 <% pokemon.forEach(p => { %>
-                    <div><a href="/pokemon/<%= p.pokemon.name %>" class = "index-items"><%= p.pokemon.name %></a></div>
+                    <div><a href="/pokemon/<%= p.pokemon.name %>" class = "index-items" style = "text-transform: uppercase;"><%= p.pokemon.name %></a></div>
                 <% }) %>
         </div>
     </div>

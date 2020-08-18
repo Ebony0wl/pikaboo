@@ -3,18 +3,18 @@
     <div class="wrap">
         <%- include('../partials/header.ejs') %>
   
-    <div class="container">
+        <div class="container">
         
     
         <h2 id="pokeName">Item: <span > <%=name%> </span> </h2>
-        <div id="card">
-        <img id="pokeSprite" src = "<%= sprites.default %>" alt = "Pokemon ItemImage">
+            <div id="card">
+                <img id="pokeSprite" src = "<%= sprites.default %>" alt = "Pokemon ItemImage">
 
-        <p id="typeDisplay">Category: <%= category_name.replace(/-/g," ") %></p> 
-        <p class="pokeInfo" style="padding-top: 8px;">Cost: <%= cost %></p>
+                <p id="typeDisplay">Category: <%= category_name.replace(/-/g," ") %></p> 
+                <p class="pokeInfo" style="padding-top: 8px;">Cost: <%= cost %></p>
 
-    </div>
-    </div>
+            </div>
+        </div>
     </div>
 </body>
 <%- include('../partials/footer.ejs') %>

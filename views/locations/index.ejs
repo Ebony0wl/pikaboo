@@ -6,7 +6,7 @@
         <div class=" typeCont flex-container">
     
                 <% locations.forEach(t => { %>
-                    <div><a href="/types/<%= t.name %>" class = "index-items"> <%= t.name %></a></div>
+                    <div><a href="/locations/<%= t.name %>" class = "index-items" style = "text-transform: uppercase;"> <%= t.name.replace(/-/g," ") %></a></div>
                 <% }) %>
      
         </div>

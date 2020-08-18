@@ -8,11 +8,8 @@ const index = (req, res) => {
         // res.json({
         //     locations: response.data.results
         // });
-        // res.render('locations/index.ejs',{
-        //     locations: response.data.results
-        // });
-        res.render('items/index.ejs', {
-            items: shuffle(items)    
+        res.render('locations/index.ejs',{
+            locations: response.data.results
         });
 
     })
@@ -33,11 +30,14 @@ const show = async (req, res) => {
     try {
         const foundLocation = await axios.get(`${api}/${id}`);
         console.log(foundLocation.data, '<-- english information')
-        res.json({
-            location: foundLocation.data,
-            name: foundLocation.data.name,
-            url: foundLocation.data.url,
-            region: foundLocation.data.region
+        // res.json({
+        //     location: foundLocation.data,
+        //     name: foundLocation.data.name,
+        //     url: foundLocation.data.url,
+        //     region: foundLocation.data.region
+        // });
+        res.render('locations/location',{
+            name: foundLocation.data.names[1].name
         });
     } catch (err) {
         res.render('error', {err});
