@@ -80,6 +80,21 @@ h2 {
 }
 
 
+#pokemonShow {
+    text-align: center;
+    color: white;
+    font-family: 'Archivo Narrow', sans-serif;
+}
+
+#pokeGachaName {
+    text-align: center;
+}
+
+.pokeGacha {
+    position: relative;
+    width: 30%;
+    left: 34%;
+}
 
 
 #pokeSprite {
@@ -182,6 +197,33 @@ input[type="text"] {
     color: white;
 }
 
+#feedButton {
+    width: 20%;
+    position: relative;
+    background-color: #afe66c;
+    border: none;
+    box-shadow: 1px 1px 4px grey;
+    color: white;
+    left: 25%;
+    top: 10px;
+    font-size: 20px;
+    padding: 5px;
+}
+
+
+#shareButton {
+    position: relative;
+    border: none;
+    box-shadow: 1px 1px 4px grey;
+    left: 56%;
+    padding: 5px;
+    bottom: 22px;
+    font-size: 20px;
+    color: white;
+    background-color: gray;
+}
+
+
 .wrap {
     min-height: calc(100vh - 50px);
 
@@ -269,6 +311,10 @@ input[type="text"] {
     color: lightcoral;
     font-weight: bold;
 }
+
+
+
+
 
 /* Desktop view */
 @media only screen and (min-width: 769px) {
