@@ -3,7 +3,7 @@ const axios = require('axios')
 
 const index = (req, res) => {
     axios
-    .get(api + '?limit=50&offset=0')
+    .get(api + '?limit=781&offset=0')
     .then((response) => {
         res.json({
             locations: response.data.results
