@@ -136,9 +136,29 @@ const show = async (req, res) => {
     }
 };
 
+const likePokemon = (req, res) => {
+    console.log(req.session);
+    firebase
+        .doLikePokemon(req.params.id, req.session.user.uid)
+        .then((snapShot) => {
+            res.redirect(`/pokemon/${req.params.id}`)
+        });
+}
+
+const unlikePokemon = (req, res) => {
+    console.log(req.session);
+    firebase
+        .doUnlikePokemon(req.params.id, req.session.user.id)
+        .then((snapShot) => {
+            console.log(snapShot);
+        });
+}
+
 
 module.exports = {
     index,
     post,
-    show
+    show,
+    likePokemon,
+    unlikePokemon
 }
