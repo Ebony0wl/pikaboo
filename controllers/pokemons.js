@@ -1,6 +1,7 @@
 const api = 'https://pokeapi.co/api/v2/pokemon';
 const axios = require('axios');
 const { response } = require('express');
+const firebase = require('../config/firebase');
 
 // const config = {
 //   method: 'get',
