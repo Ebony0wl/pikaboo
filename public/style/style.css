@@ -156,7 +156,7 @@ input[type="text"] {
     font-family: 'Archivo Narrow', sans-serif;
     border: none;
     border-radius: 2px;
-    margin-right: 50%;
+    right: 25%;
     
     
 }
@@ -164,7 +164,7 @@ input[type="text"] {
 #submit {
     position: relative;
     width: 25%;
-    margin-right: 40%;
+    right: 25%;
     margin-top: 1%;
     padding: 5px;
     border: none;
@@ -193,7 +193,79 @@ input[type="text"] {
     font-family: 'Archivo Narrow', sans-serif;
     font-size: 3vw;
     text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
     background: linear-gradient(to bottom, #7cae71 0%, #009933 100%);
+}
+
+
+
+.index-title h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+}
+
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin-left: 1%;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+
+.typeCont {
+    position: absolute;
+    top: 42%;
+    margin-left: -10%;
+}
+
+
+
+.genCont {
+    position: absolute;
+    top: 50%;
+    margin-left: 5%;
+    width: 60%;
+}
+
+
+.itemCont {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+}
+
+
+.flex-container div {
+    background-color: rgba(235, 232, 50, 0.918);
+    width: auto;
+    height: 25px;
+    margin: 10px;
+    margin-left: 10px;
+    text-align: center;
+    font-size: 30px;
+    padding: 2px;
+    padding-top: 0;
+    border-radius: 5px;
+}
+.index-items:link{
+    text-decoration: none;
+    color: rgb(42, 172, 195);
+    font-family: monospace;
+    font-size: 2vh;
+    position: relative;
+    bottom: 10px;
+}
+
+
+.index-items:hover{
+    color: lightcoral;
+    font-weight: bold;
 }
 
 /* Desktop view */
@@ -263,15 +335,15 @@ input[type="text"] {
 
 #searchResults {
 
-    font-size: 3vw;
+    font-size: 2vw;
 
 
 }
 
 #card {
-    width: 40%;
-    margin-left: 32%;
-    margin-top: 10%;
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 5%
 }
 
 #pokeSprite {
@@ -284,8 +356,7 @@ input[type="text"] {
 #pokeName {
     font-family: 'Archivo Narrow', sans-serif;
     color: white;
-    margin-top: 50px;
-    margin-bottom: -2%;
+    margin-top: 60px;
     text-align: center;
     font-size: 1.7vw;
 }
@@ -335,6 +406,10 @@ li
 }  
 
 
+.name a, .main-nav a {
+margin-left: 15px;
+}
+
  #pikachu-icon {
   width: 6%;
   margin-top: 3%;
@@ -358,7 +433,7 @@ li
  #searchInput {
     width: 50%;
     font-size: 1vw;
-    margin-right: 15%;
+    margin-left: 30%;
    
  }
 
@@ -366,7 +441,7 @@ li
  #submit {
     width: 15%;
     font-size: 1vw;
-    margin-left: 22%;
+    margin-left: 30%;
  }
 
  .main-footer {
