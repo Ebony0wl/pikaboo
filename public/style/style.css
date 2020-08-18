@@ -220,8 +220,10 @@ input[type="text"] {
 
 .typeCont {
     position: absolute;
-    top: 42%;
+    top: 45%;
     margin-left: -10%;
+    width: 70%;
+
 }
 
 
@@ -236,8 +238,8 @@ input[type="text"] {
 
 .itemCont {
     position: absolute;
-    top: 25%;
-    left: 10%;
+    top: 40%;
+    margin-left: -12%;
 }
 
 
@@ -297,7 +299,15 @@ input[type="text"] {
     .genCont {
         position: absolute;
         top: 200px;
-        margin-left: 10%;
+        margin-left: 12%;
+        width: 68%;
+    }
+
+
+    .itemCont {
+    position: absolute;
+    top: 25%;
+    left: 10%;
     }
 
 
@@ -379,6 +389,34 @@ input[type="text"] {
     margin-bottom: -1%;
     padding: 1%;
 
+}
+
+#signInHeader {
+    margin-top: 4%;
+    position: relative;
+    left: 46%;
+    top: 50px;
+}
+
+.signIn {
+    position: relative;
+    top: 100px;
+    left: 20%;
+    font-family: 'Archivo Narrow', sans-serif;
+
+}
+
+#signInPw {
+    padding: 5px;
+    width: 23%;
+}
+
+#signInSubmit {
+    background-color: #afe66c;
+    border-style: none;
+    color: white;
+    padding: 6px;
+    width: 8%;
 }
 
 
