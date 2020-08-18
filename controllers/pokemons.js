@@ -145,6 +145,15 @@ const likePokemon = (req, res) => {
         });
 }
 
+const unlikePokemon = (req, res) => {
+    console.log(req.session);
+    firebase
+        .doUnlikePokemon(req.params.id, req.session.user.id)
+        .then((snapShot) => {
+            console.log(snapShot);
+        });
+}
+
 
 module.exports = {
     index,
