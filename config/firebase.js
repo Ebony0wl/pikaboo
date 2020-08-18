@@ -35,7 +35,7 @@ class Firebase {
     }
 
     // ** User API **
-    doCreateUser = (user) => {
+    doCreateUser = (id, user) => {
         return this.db.collection('users').doc(id).set(user);
     }
 
