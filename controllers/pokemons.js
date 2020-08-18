@@ -69,6 +69,7 @@ const show = async (req, res) => {
     try { 
         //pokemon
         const foundPokemon = await axios.get(`${api}/${id}`);
+        const userPokemon = await firebase.doGetPokemon(id);
         // res.json({
         //     pokemon: foundPokemon.data,
         //     name: foundPokemon.data.forms[0].name,
@@ -111,8 +112,8 @@ const show = async (req, res) => {
         //         region: foundGeneration.data.main_region,
         //         generation: foundGeneration.data.name
         //     });
-        generationData = foundGeneration.data;
-        region = foundGeneration.data.main_region;
+        const generationData = foundGeneration.data;
+        const region = foundGeneration.data.main_region;
         
 //{“linktojson”: “filelink.json”}
 
@@ -122,7 +123,8 @@ const show = async (req, res) => {
             generationName,
             region,
             chain,
-            pokemonPic
+            pokemonPic,
+            userPokemon: userPokemon.data() || []
         });
         
     } catch (err) {
