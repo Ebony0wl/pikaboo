@@ -158,5 +158,7 @@ const unlikePokemon = (req, res) => {
 module.exports = {
     index,
     post,
-    show
+    show,
+    likePokemon,
+    unlikePokemon
 }
