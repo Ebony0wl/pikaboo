@@ -1,0 +1,15 @@
+ <%- include('../partials/head.ejs') %>
+ 
+<body>
+    <div class="wrap">
+        <%- include('../partials/header.ejs') %>
+        <div class="index-title"><h2>Type: <%= name %></h2></div>
+        <div class=" typeCont flex-container">
+                <% pokemon.forEach(p => { %>
+                    <div><a href="/pokemon/<%= p.pokemon.name %>" class = "index-items"><%= p.pokemon.name %></a></div>
+                <% }) %>
+        </div>
+    </div>
+</div>
+</body>
+<%- include('../partials/footer.ejs') %>

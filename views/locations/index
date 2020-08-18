@@ -1,0 +1,15 @@
+<%- include('../partials/head.ejs') %>
+<body>
+    <div class="wrap">
+    <%- include('../partials/header.ejs') %>
+    <div class="index-title"><h2>Locations</h2></div>
+        <div class=" typeCont flex-container">
+    
+                <% locations.forEach(t => { %>
+                    <div><a href="/types/<%= t.name %>" class = "index-items"> <%= t.name %></a></div>
+                <% }) %>
+     
+        </div>
+    </div>
+    <%- include('../partials/footer.ejs') %>
+</body>

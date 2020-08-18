@@ -3,11 +3,18 @@ const axios = require('axios')
 
 const index = (req, res) => {
     axios
-    .get(api + '?limit=50&offset=0')
+    .get(api + '?limit=781&offset=0')
     .then((response) => {
-        res.json({
-            locations: response.data.results
+        // res.json({
+        //     locations: response.data.results
+        // });
+        // res.render('locations/index.ejs',{
+        //     locations: response.data.results
+        // });
+        res.render('items/index.ejs', {
+            items: shuffle(items)    
         });
+
     })
     .catch( (err) => {
         res.render('error', {err});
