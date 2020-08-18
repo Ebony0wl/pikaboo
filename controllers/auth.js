@@ -5,6 +5,7 @@ const { auth } = require('firebase');
 
 const signUp = (req, res, next) => {
     console.log(req.body, ' <-- req.body');
+    req.app.locals.err = '';
     firebase.doCreateUserWithEmailAndPassword(req.body.email, req.body.password)
     .then( (authUser) => {
         console.log(authUser.user.uid);
