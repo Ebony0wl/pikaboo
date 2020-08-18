@@ -100,7 +100,9 @@ app.get('/signin', (req, res) => {
         return res.redirect(`/users/${req.session.user.uid}`);
     }
 
-    res.render('signin/index');
+    res.render('signin/index', {
+        error: req.app.locals.err
+    });
 });
 
 app.get('/signup', (req, res) => {
@@ -108,7 +110,9 @@ app.get('/signup', (req, res) => {
         return res.redirect(`/users/${req.session.user.uid}`);
     }
     
-    res.render('signup/index');
+    res.render('signup/index', {
+        error: req.app.locals.err
+    });
 })
 
 
