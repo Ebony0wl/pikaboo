@@ -38,6 +38,38 @@ class Firebase {
     doCreateUser = (user) => {
         return this.db.collection('users').doc(id).set(user);
     }
+
+    doGetPokemon = (pokemonId) => {
+        return this.db
+            .collection('pokemon')
+            .doc(pokemonId)
+            .get()
+    }
+
+    doLikePokemon = (pokemonId, userId) => {
+        return this.db
+        .collection('pokemon')
+        .doc(pokemonId)
+        .set(
+            {
+                likes: app.firestore.FieldValue.arrayUnion(userId)
+            },
+            { merge: true }
+        );
+    }
+
+    doUnlikePokemon = (pokemonId, userId) => {
+        return this.db
+        .collection('pokemon')
+        .doc(pokemonId)
+        .set(
+            {
+                likes: app.firestore.FieldValue.arrayRemove(userId)
+            },
+            { merge: true }
+        );
+    }
+
 }
 
 const firebase = new Firebase();

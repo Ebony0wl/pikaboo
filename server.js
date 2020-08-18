@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const session = require('express-session');
 const methodOverride = require('method-override');
 
 require('dotenv').config();
@@ -32,6 +33,17 @@ app.use(methodOverride('_method')); // must become before our routes for PUT/PAT
 app.use(express.urlencoded({ extended: true })); // nested properties in JSON objects can be accessed
 // form-urlencoded
 
+// app.use(session({
+//     secret: 'pikachu secret',
+//     resave: false,
+//     saveUninitialized: true
+//   }));
+
+// app.use((req, res, next) => {
+//     res.locals.title = 'Pikaboo App';
+//     res.locals.user = req.session.user;
+//     next();
+// })
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -73,10 +85,6 @@ app.get('/', (req, res) => {
     // res.status(200).json({
     //     message: 'root url needs to res.render home.ejs'
     // })
-});
-
-app.get('/signin', (req, res) => {
-    res.render('signin/index')
 });
 
 
