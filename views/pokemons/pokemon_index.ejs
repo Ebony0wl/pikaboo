@@ -19,6 +19,9 @@
         <p class="pokeInfo">Generation: <%= generationName %></p> 
         <p class="pokeInfo">Location: <%= region.name %></p>
 
+        <form action="/pokemon/<%= id %>" method="POST">
+            <button>Like Pokemon</button>
+        </form>
     </div>
     </div>
     </div>
