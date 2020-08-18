@@ -9,4 +9,5 @@ const usersController = require('../controllers/users');
 
 router.get('/users/:id', usersController.show);
 
+
 module.exports = router;

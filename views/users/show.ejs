@@ -1,5 +1,11 @@
-<div>userpage
-    <br/>
-    <%= user.email %>
-    <%= user.username %>
-</div>
+<%- include('../partials/head.ejs') %>
+<body>
+    <div class="wrap">
+    <%- include('../partials/header.ejs') %>
+        <h2><%= user.username %></h2>
+        <h3>Your Pokemon</h3>
+        <p>Click here to learn more about your pokemon :3</p>
+        <button >pokemon playground</button>
+
+    </div>
+<%- include('../partials/footer.ejs') %>
