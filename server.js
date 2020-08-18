@@ -96,10 +96,18 @@ app.get('/', (req, res) => {
 });
 
 app.get('/signin', (req, res) => {
+    if (req.session.user) {
+        return res.redirect(`/users/${req.session.user.uid}`);
+    }
+
     res.render('signin/index');
 });
 
 app.get('/signup', (req, res) => {
+    if (req.session.user) {
+        return res.redirect(`/users/${req.session.user.uid}`);
+    }
+    
     res.render('signup/index');
 })
 
