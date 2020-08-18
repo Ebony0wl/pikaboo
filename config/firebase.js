@@ -39,6 +39,13 @@ class Firebase {
         return this.db.collection('users').doc(id).set(user);
     }
 
+    doGetPokemon = (pokemonId) => {
+        return this.db
+            .collection('pokemon')
+            .doc(pokemonId)
+            .get()
+    }
+
     doLikePokemon = (pokemonId, userId) => {
         return this.db
         .collection('pokemon')
