@@ -18,11 +18,11 @@ This project is licensed under the MIT License, as shown in ```LICENSE.TXT```.
 * Learn how to import libraries and frameworks using NPM, node_modules, package.json
 
 ## Background
-During the past few months alot of people around the world have started to reflect on experiences that they use to take for granted. The daily interactions and the small conversations. The friends that they had grown apart from before the pandemic. 
+During the past few months, alot of people around the world have started to reflect on experiences that they use to take for granted - the daily interactions and the small conversations with friends kept at a distance during the pandemic. 
 
-Our Snap Mini seeks to bring back these relationships by using the popular game Pokemon
+Our Snap Mini seeks to strengthen these relationships by using the popular game called Pokemon.
 
-Since the word for friend in Japanese is Tomodachi we decided to name our snap mini “Poke-Dachi”
+Since the word for friend in Japanese is Tomodachi, we decided to name our Snap Mini “Poke-Gachi”
 
 
 ### Technologies
