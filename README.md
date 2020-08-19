@@ -26,7 +26,15 @@ This project is licensed under the MIT License, as shown in ```LICENSE.TXT```.
 * Express
 
 ### Credits
-API: PokeAPI
-Accessed 4 August 2020
-https://github.com/PokeAPI/
-https://pokeapi.co/api/v2/
+* API: PokeAPI
+    * Accessed 4 August 2020
+    * https://github.com/PokeAPI/
+    * https://pokeapi.co/api/v2/
+    
+* Freepik: Graphic Resources for Everyone
+    * Accessed 18 August 2020
+    * http://www.freepik.com/
+
+* Flaticon: The Largest Database of Free Vector Icons    
+    * Accessed 17 August 2020
+    * https://www.flaticon.com/
