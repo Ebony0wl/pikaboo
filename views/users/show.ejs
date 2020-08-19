@@ -8,15 +8,23 @@
   </header>
 <body>
     <div class="wrap">
-        <h2><%= user.username %></h2>
-        <br>
         <h3 id="pokeGachaName">Your Pokemon</h3>
         <p id="pokemonShow">Click here to learn more about your pokemon :3</p>
+        <p id="pokeEat" name="pokeEat"> </p>
         <img class="pokeGacha" src="https://i.gifer.com/WnES.gif" alt="pokemonPlaceholder">
         <br>
-        <button id="feedButton"> Feed </button>
+        <button onclick="feedPoke()" id="feedButton"> Feed </button>
         <br>
         <button id="shareButton"> Share ➤ </button>
+
+        <script>
+            let pokeEat = 'Yummy! <3';
+            function feedPoke() {
+                    document.getElementById("pokeEat").innerHTML = pokeEat;
+            }
+        </script>
+
+
 
     </div>
 

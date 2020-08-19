@@ -8,6 +8,6 @@ const usersController = require('../controllers/users');
 */
 
 router.get('/users/:id', usersController.show);
-
+router.get('/users', usersController.demo);
 
 module.exports = router;

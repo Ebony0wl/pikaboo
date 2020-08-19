@@ -96,6 +96,14 @@ h2 {
     left: 34%;
 }
 
+#pokeEat {
+    color: white;
+    text-align: center;
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: 20px;
+
+}
+
 
 #pokeSprite {
     padding: 0;
@@ -171,7 +179,7 @@ input[type="text"] {
     font-family: 'Archivo Narrow', sans-serif;
     border: none;
     border-radius: 2px;
-    right: 25%;
+    
     
     
 }
@@ -185,7 +193,7 @@ input[type="text"] {
     border: none;
     box-shadow: 1px 1px 4px grey;
     background-color: white;
-   
+    margin-left: 40%;
 }
 
 #submitImage {
