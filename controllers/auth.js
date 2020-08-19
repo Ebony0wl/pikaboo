@@ -82,10 +82,10 @@ const signIn = (req, res) => {
             email: req.body.email,
             id: authUser.user.uid,
             heldPokemon: authUser.user.heldPokemon,
-            heldPokemonData: authUser.user.heldPokemonData,
-            heldPokemonName: authUser.user.heldPokemonName,
-            heldPokemonSprite: authUser.user.heldPokemonSprite,
-            heldPokemonObject: authUser.user.heldPokemonObject
+            // heldPokemonData: authUser.user.heldPokemonData,
+            // heldPokemonName: authUser.user.heldPokemonName,
+            // heldPokemonSprite: authUser.user.heldPokemonSprite,
+            // heldPokemonObject: authUser.user.heldPokemonObject
         }
         res.redirect(`/users/${authUser.user.uid}`);
     })
