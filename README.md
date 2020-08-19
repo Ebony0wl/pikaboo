@@ -1,6 +1,8 @@
 # pikaboo
 Pikaboo is a search application that calls Poke API for information about different pokemon, items, and locations.
 
+![homepage](./public/images/homepage.png)
+
 * Git Manager: Ebony Warren https://github.com/Ebony0wl
 * UI Developer: Nisa Cheng https://github.com/NisaCheng
 * Server-Side Developer: Mark Calvelo https://github.com/Combatd
