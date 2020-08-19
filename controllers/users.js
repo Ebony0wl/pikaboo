@@ -48,16 +48,24 @@ const post = async (req, res) => {
 
 const show = async (req, res) => {
     console.log(req.params.id, ' <-- req.params.id');
-    const user = await (await firebase.doGetUser(req.params.id)).data();
+    // const user = await (await firebase.doGetUser(req.params.id)).data();
     console.log(user, ' <---- user');
     console.log(user.email, ' <--- email of user');
     console.log(req.session.user, ' <--- req.session.user');
-    req.session.user = {
-        ...user,
-        uid: req.params.id,
-    };
+    // req.session.user = {
+    //     ...user,
+    //     uid: req.params.id,
+    // };
     res.render('users/show', {
-        user: user,
+        // user: user,
+    });
+
+}
+
+
+const demo = async (req, res) => {
+
+    res.render('users/show', {
     });
 
 }
@@ -101,6 +109,7 @@ const deleteUser = (req, res) => {
 module.exports = {
     index,
     post,
+    demo,
     show,
     put,
     deleteUser
