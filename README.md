@@ -22,8 +22,14 @@ During the past few months, alot of people around the world have started to refl
 
 Our Snap Mini seeks to strengthen these relationships by using the popular game called Pokemon.
 
-Since the word for friend in Japanese is Tomodachi, we decided to name our Snap Mini “Poke-Gachi”
+Since the word for friend in Japanese is Tomodachi, we decided to name our Snap Mini “PokeGachi”
 
+In PokeGachi, users can take care of a specific Pokemon and evole it with friends.
+The more people chat, the faster their Pokemon levels up!
+They won't be limited to just one Pokemon. More conversations on Snapchat means more
+Pokemon to level up. Users can even see their Pokemon on the Pikaboo website for more details.
+
+They can view information about the specific pokemon, such as species name, region, and other fun facts you would find in a Pokedex dictionary found in the games!
 
 ### Technologies
 * Model-View-Controller Software Architecture (MVC)
@@ -33,6 +39,11 @@ Since the word for friend in Japanese is Tomodachi, we decided to name our Snap 
 * Firebase (NoSQL Database, User Authorization)
 * Node.js
 * Express
+
+### Possible New Features
+* Pokemon Chat Stickers for messages and stories
+* New Animations
+* Event Triggers for Pokemon Changes in PokeGachi
 
 ### Credits
 * API: PokeAPI
