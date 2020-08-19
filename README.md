@@ -18,6 +18,11 @@ This project is licensed under the MIT License, as shown in ```LICENSE.TXT```.
 * Learn how to import libraries and frameworks using NPM, node_modules, package.json
 
 ## Background
+* Bring friends together
+* Nostalgic pokemon experience
+* A companion to play with
+* Engaging and fun past time
+
 During the past few months, alot of people around the world have started to reflect on experiences that they use to take for granted - the daily interactions and the small conversations with friends kept at a distance during the pandemic. 
 
 Our Snap Mini seeks to strengthen these relationships by using the popular game called Pokemon.
@@ -44,6 +49,10 @@ They can view information about the specific pokemon, such as species name, regi
 * Pokemon Chat Stickers for messages and stories
 * New Animations
 * Event Triggers for Pokemon Changes in PokeGachi
+* Pokemon Mood Status
+* Dress-Up Pokemon
+* Pokemon Trading
+* Option to Save and Store Pokemon
 
 ### Credits
 * API: PokeAPI
