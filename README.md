@@ -38,3 +38,7 @@ This project is licensed under the MIT License, as shown in ```LICENSE.TXT```.
 * Flaticon: The Largest Database of Free Vector Icons    
     * Accessed 17 August 2020
     * https://www.flaticon.com/
+
+* Wallpaper Cave - Pokémon Anime Forest Backgrounds
+    * Accessed 14 August 2020
+    * https://wallpapercave.com/pokemon-anime-forest-background
