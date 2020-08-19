@@ -143,11 +143,8 @@ li {
     font-family: 'Fjalla One', sans-serif;
     list-style-type:none;
     color: white;
-    margin-left: -10%;
-    margin-top: -3%;
    
-   
-}
+} 
 
 
 .name a,
@@ -320,7 +317,36 @@ input[type="text"] {
     font-weight: bold;
 }
 
+.bottomNav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255,255,255,0.3);
+}
 
+.navContainer {
+    display: inline-block;
+}
+
+.bottomNavList {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    right: 10%;
+}
+
+.bottomNavList li {
+    padding: 10px;
+    display: inline-block;
+    margin-left: 60px;
+
+}
+
+.imgResize {
+    width: 30px;
+   
+    
+}
 
 
 
