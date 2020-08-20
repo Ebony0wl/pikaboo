@@ -1,11 +1,12 @@
 <%- include('../partials/head.ejs') %>
 <div class="wrap">
+    <h1 class="signUpHeader"> Sign Up </h1>
     <div class="container">
-        <form action='/auth/signup' method="POST">
-            <input type="text" name="username" placeholder="username" required>
-            <input type='text' name="email" placeholder="johndoe@user.com" required/>
-            <input type='password' name="password" placeholder="password" required/>
-            <button>Sign Up</button>
+        <form id="signUpForm" action='/auth/signup' method="POST">
+            <input class="signUpInput" type="text" name="username" placeholder="username" required>
+            <input class="signUpInput" type='text' name="email" placeholder="johndoe@user.com" required/>
+            <input class="signUpInput" type='password' name="password" placeholder="password" required/>
+            <button class=" signInSubmit signUpButton ">Sign Up</button>
             <%= error %>
         </form>
     </div>
