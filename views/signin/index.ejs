@@ -1,15 +1,15 @@
 <%- include('../partials/head.ejs') %>
 <div class="wrap">
-    <h1 id="signInHeader"> Sign In </h1>
+    <h1 class="signInHeader"> Sign In </h1>
     <div class=" signIn container">
         <form action='/auth/signin' method="POST">
-            <input type='text' name="email" placeholder="email" required/>
-            <input id="signInPw" type='password' name="password" placeholder="password" required />
-            <button id="signInSubmit">Sign In</button>
+            <input id="signInEmail" type='email' name="email" placeholder="email" required/> <br>
+            <input id="signInPw" type='password' name="password" placeholder="password" required /> <br>
+            <button class="signInSubmit">Sign In</button>
 
         </form>
         
-        <h2> Don't have an account? Sign up here! 
+        <h2 id="signUpLink"> Don't have an account? Sign up <a href="/signup">here! </a>
             
         </h2>
     </div>

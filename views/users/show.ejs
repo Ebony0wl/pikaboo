@@ -2,25 +2,62 @@
 
 <header class="main-header">
     <div class="container clearfix">
-        <h1 class="name"> PikaBoo </h1> 
+        <h1 class="name"> Poke-Dachi </h1> 
         <img id="pikachu-icon" src="/images/pikachu.svg" alt="pikachu-head-icon">
      </div>
   </header>
 <body>
     <div class="wrap">
-        <h3 id="pokeGachaName">Your Pokemon</h3>
-        <p id="pokemonShow">Click here to learn more about your pokemon :3</p>
+        <h3 id="pokeGachaName"> <b>Name:</b> Bulby!</h3>
+        <h3 id="pokeGachaName"> <b>Bulby is: </b> <span id="mood" name="pokeMood">Hungry :( </span> </h3>
+        
         <p id="pokeEat" name="pokeEat"> </p>
+        <p id="levelUp" name="levelUp"> </p>
         <img class="pokeGacha" src="https://i.gifer.com/WnES.gif" alt="pokemonPlaceholder">
         <br>
         <button onclick="feedPoke()" id="feedButton"> Feed </button>
         <br>
         <button id="shareButton"> Share ➤ </button>
 
+        <p id="pokemonShow">Click <a href="/pokemon/bulbasaur">here</a> to learn more about your pokemon :3</p>
+
+
+        <footer class="bottomNav">
+            <div class="navContainer">
+            <ul class="bottomNavList">
+                <li>
+                    <a href="/users">  <img class="imgResize" src="https://www.iconsdb.com/icons/preview/white/home-3-xxl.png" alt=""> </a>
+                   
+                </li>
+                <li>
+                    <a href="/">
+                        <img class="imgResize" src="https://www.iconsdb.com/icons/preview/white/search-xxl.png" alt="">
+                    </a>
+                    
+                </li>
+                <li> 
+                    <a href="/types">
+                    <img class="imgResize" src="https://www.iconsdb.com/icons/preview/white/tree-structure-xxl.png" alt="">
+                    </a>
+                    
+                </li>
+                <li> <a href="/signin">  <img class="imgResize" src="https://www.iconsdb.com/icons/preview/white/user-xxl.png" alt=""> </a>
+                   
+                </li>
+            </ul>
+        </div>
+        </footer>
+
         <script>
-            let pokeEat = 'Yummy! <3';
+            let pokeEat = '<b> Yummy! <3 Bulby enjoyed his treat! </b>';
+            let levelUp = '<b> Level Up! +1 ! :^) </b>';
+
+            let pokeMood = 'Full &hearts;';
+
             function feedPoke() {
                     document.getElementById("pokeEat").innerHTML = pokeEat;
+                    document.getElementById("levelUp").innerHTML = levelUp;
+                    document.getElementById("mood").innerHTML = pokeMood;
             }
         </script>
 
