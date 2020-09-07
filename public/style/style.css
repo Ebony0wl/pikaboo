@@ -435,11 +435,16 @@ input[type="email"] {
     font-weight: bold;
 }
 
+
 .bottomNav {
+    display: flex;
+    justify-content:center;
     position: fixed;
     bottom: 0;
+    /* width: 100%; */
     width: 100%;
     background-color: rgba(255,255,255,0.3);
+    
 }
 
 .navContainer {
@@ -450,14 +455,15 @@ input[type="email"] {
     display: inline-block;
     position: relative;
     width: 100%;
-    right: 14%;
+    /* right: 14%; */
+    padding: 0px;
 }
 
 .bottomNavList li {
-    padding: 10px;
+    padding: 0px 10px;
     display: inline-block;
-    margin-left: 40px;
-
+    /* margin-left: 40px; */
+    font-size: medium;
 }
 
 .imgResize {
@@ -466,16 +472,20 @@ input[type="email"] {
     
 }
 
+.demoSize{
+    
+}
+
 @media only screen and (max-width: 370px) {
 
-.bottomNavList {
+/* .bottomNavList {
     right: 10%;
-}
+} */
 
 
-.bottomNavList li {
+/* .bottomNavList li {
     margin-left: 30px;
-}
+} */
 
 #pokemonShow {
     position: absolute;
@@ -489,9 +499,16 @@ input[type="email"] {
 }
 
 
-
 /* Desktop view */
 @media only screen and (min-width: 769px) {
+    .demoSize{
+        max-width: 400px; 
+        margin: auto;
+    }
+    .bottomNav {
+        width: 400px;
+    }
+
     .index-title h2{
         display: flex;
         align-items: center;

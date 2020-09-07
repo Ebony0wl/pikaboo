@@ -65,7 +65,7 @@ const show = async (req, res) => {
 
 const demo = async (req, res) => {
 
-    res.render('users/show', {
+    res.render('demo/demo', {
     });
 
 }

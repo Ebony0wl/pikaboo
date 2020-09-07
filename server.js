@@ -82,6 +82,9 @@ app.use(movesRoutes);
 const userRoutes = require('./routes/users');
 app.use(userRoutes);
 
+const demoRoutes = require('./routes/demo');
+app.use(demoRoutes);
+
 const authRoutes = require('./routes/auth');
 app.use(authRoutes);
 

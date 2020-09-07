@@ -1,9 +1,13 @@
-<%- include('../partials/header.ejs') %>
+<%- include('../partials/head.ejs') %>
     <body>
-        <div>
-            <h1><%= name %></h1> <img src="<%= sprites.default %>" alt="">
-            <h2>Category: <%= category_name %></h2>
-            <h3>Cost: $<%= cost %></h3>
+        <div class="wrap">
+            <%- include('../partials/header.ejs') %>
+            <h2 id="pokeName"><%= name %></h2>
+            <div id="card">
+            <img id="pokeSprite" src="<%= sprites.default %>" alt="Image of <%= name %>">
+            <p class="pokeInfo">Category: <%= category_name %></p>
+            <p class="pokeInfo">Cost: $<%= cost %></p>
+            </div>
         </div>
     </body>
 </html>

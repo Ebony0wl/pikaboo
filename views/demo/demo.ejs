@@ -1,18 +1,21 @@
-<%- include('../partials/head.ejs') %>
+<%- include('../partials/head-p.ejs') %>
 
+<body class="demoSize">
 <header class="main-header">
     <div class="container clearfix">
         <h1 class="name"> Poke-Dachi </h1> 
         <img id="pikachu-icon" src="/images/pikachu.svg" alt="pikachu-head-icon">
      </div>
-  </header>
-<body>
+</header>
+
     <div class="wrap">
         <h3 id="pokeGachaName"> <b>Name:</b> Bulby!</h3>
         <h3 id="pokeGachaName"> <b>Bulby is: </b> <span id="mood" name="pokeMood">Hungry :( </span> </h3>
         
         <p id="pokeEat" name="pokeEat"> </p>
         <p id="levelUp" name="levelUp"> </p>
+        <p>You have feed your pokemon <span id="count" name="count">0</span> times</p>
+        <p id="evolve" name="evolve">Your pokemon hasn't evolved yet :(</p>
         <img class="pokeGacha" src="https://i.gifer.com/WnES.gif" alt="pokemonPlaceholder">
         <br>
         <button onclick="feedPoke()" id="feedButton"> Feed </button>
@@ -50,18 +53,31 @@
 
         <script>
             let pokeEat = '<b> Yummy! <3 Bulby enjoyed his treat! </b>';
-            let levelUp = '<b> Level Up! +1 ! :^) </b>';
-
+            let levelUp = ' Level Up! +1 ! :^)';
+            let evolve = 'Your pokemon has evolved!';
             let pokeMood = 'Full &hearts;';
+            let count = 1;
 
             function feedPoke() {
+                    evolution();
                     document.getElementById("pokeEat").innerHTML = pokeEat;
-                    document.getElementById("levelUp").innerHTML = levelUp;
+                    //document.getElementById("levelUp").innerHTML = levelUp;
+                    //alert(levelUp);
                     document.getElementById("mood").innerHTML = pokeMood;
+                    document.getElementById("count").innerHTML = count++;
+                    
+            }
+
+            function evolution(){
+                if (count === 5){
+                    document.getElementById("evolve").innerHTML = 'Your pokemon just evolved!';
+                    
+                }
             }
         </script>
 
 
 
     </div>
+    </body>
 
