@@ -65,8 +65,7 @@ const show = async (req, res) => {
 
 const demo = async (req, res) => {
 
-    res.render('demo/demo', {
-    });
+    res.redirect('./demo/');
 
 }
 
