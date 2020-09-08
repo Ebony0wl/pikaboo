@@ -4,6 +4,7 @@
 
 html, body {
     overflow-x: hidden;
+    overflow-y: hidden;
   }
 
 
@@ -501,6 +502,11 @@ input[type="email"] {
 
 /* Desktop view */
 @media only screen and (min-width: 769px) {
+
+    /* html, body {
+        overflow-x: show;
+    } */
+
     .demoSize{
         max-width: 400px; 
         margin: auto;
@@ -523,212 +529,212 @@ input[type="email"] {
         margin-left: 1%;
         padding-left: 100px;
         padding-right: 100px;
-    }
+        }
 
 
-    .typeCont {
+        .typeCont {
+            position: absolute;
+            top: 200px;
+            left: 70px;
+        }
+
+
+        .genCont {
+            position: absolute;
+            top: 200px;
+            margin-left: 12%;
+            width: 68%;
+        }
+
+
+        .itemCont {
         position: absolute;
-        top: 200px;
-        left: 70px;
+        top: 25%;
+        left: 10%;
+        }
+
+
+        .flex-container div {
+            background-color:rgba(235, 232, 50, 0.918);
+            width: auto;
+            height: 1.3vw;
+            margin: 10px;
+            text-align: center;
+            line-height: 35px;
+            font-size: 30px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .index-items:link{
+            text-decoration:none;
+            color: rgb(42, 172, 195);
+            font-family: monospace;
+        }
+        .index-items:hover{
+            color: lightcoral;
+        }
+
+    .wrap {
+            min-height: calc(100vh - 50px);
+    
+        }
+
+    .container {
+            width: 80%;
+            max-width: 1150px;
+            margin: 0 auto;
+        }
+        
+
+    #searchResults {
+
+        font-size: 2vw;
+
+
     }
 
-
-    .genCont {
-        position: absolute;
-        top: 200px;
-        margin-left: 12%;
-        width: 68%;
+    #card {
+        width: 30%;
+        margin-left: 35%;
+        margin-top: 5%
     }
 
-
-    .itemCont {
-    position: absolute;
-    top: 25%;
-    left: 10%;
-    }
-
-
-    .flex-container div {
-        background-color:rgba(235, 232, 50, 0.918);
-        width: auto;
-        height: 1.3vw;
-        margin: 10px;
+    #pokeSprite {
+        padding: 0;
+        margin-bottom: -7%;
+        width: 60%;
         text-align: center;
-        line-height: 35px;
-        font-size: 30px;
+    }
+
+    #pokeName {
+        font-family: 'Archivo Narrow', sans-serif;
+        color: white;
+        margin-top: 60px;
+        text-align: center;
+        font-size: 1.7vw;
+    }
+
+    #typeDisplay {
+        font-size: 1.5vw;
+        margin-right: 0;
+        margin-top: 10%;
+        margin-bottom: -2%;
+        color: white;
+
+
+    }
+
+
+    .pokeInfo {
+        margin-top: -2%;
+        font-size: 1.5vw;
+        background-color: rgba(105,190,251);
+        margin-bottom: -1%;
+        padding: 1%;
+        padding-bottom: 5%;
+
+    }
+
+    #signInHeader {
+        margin-top: 4%;
+        position: relative;
+        left: 46%;
+        top: 50px;
+    }
+
+    .signIn {
+        position: relative;
+        top: 100px;
+        left: 20%;
+        font-family: 'Archivo Narrow', sans-serif;
+
+    }
+
+    #signInPw {
+        padding: 5px;
+        width: 23%;
+    }
+
+    #signInSubmit {
+        background-color: #afe66c;
+        border-style: none;
+        color: white;
+        padding: 6px;
+        width: 8%;
+    }
+
+
+    .name {
         padding: 10px;
-        border-radius: 10px;
-    }
-    .index-items:link{
-        text-decoration:none;
-        color: rgb(42, 172, 195);
-        font-family: monospace;
-    }
-    .index-items:hover{
-        color: lightcoral;
+        float: left;
     }
 
-.wrap {
-		min-height: calc(100vh - 50px);
-   
-	}
-
-.container {
-		width: 80%;
-		max-width: 1150px;
-		margin: 0 auto;
+    .main-nav {
+        float: right;
+        padding-top: 0;
+        padding-bottom: 0;
     }
-    
 
-#searchResults {
+    .main-nav ul {
+    margin-right: 10%;
+    }
 
-    font-size: 2vw;
+    h1 {
+        margin-top: 4%;
+    }
 
-
-}
-
-#card {
-    width: 30%;
-    margin-left: 35%;
-    margin-top: 5%
-}
-
-#pokeSprite {
-    padding: 0;
-    margin-bottom: -7%;
-    width: 60%;
-    text-align: center;
-}
-
-#pokeName {
-    font-family: 'Archivo Narrow', sans-serif;
-    color: white;
-    margin-top: 60px;
-    text-align: center;
-    font-size: 1.7vw;
-}
-
-#typeDisplay {
-    font-size: 1.5vw;
-    margin-right: 0;
-    margin-top: 10%;
-    margin-bottom: -2%;
-    color: white;
+    .name, .main-nav,
+    li 
+    {
+        font-size: 2vw;
+        display: inline-block;
+        
+    }  
 
 
-}
+    .name a, .main-nav a {
+    margin-left: 15px;
+    }
 
-
-.pokeInfo {
-    margin-top: -2%;
-    font-size: 1.5vw;
-    background-color: rgba(105,190,251);
-    margin-bottom: -1%;
-    padding: 1%;
-    padding-bottom: 5%;
-
-}
-
-#signInHeader {
-    margin-top: 4%;
-    position: relative;
-    left: 46%;
-    top: 50px;
-}
-
-.signIn {
-    position: relative;
-    top: 100px;
-    left: 20%;
-    font-family: 'Archivo Narrow', sans-serif;
-
-}
-
-#signInPw {
-    padding: 5px;
-    width: 23%;
-}
-
-#signInSubmit {
-    background-color: #afe66c;
-    border-style: none;
-    color: white;
-    padding: 6px;
-    width: 8%;
-}
-
-
-.name {
-    padding: 10px;
+    #pikachu-icon {
+    width: 6%;
+    margin-top: 3%;
     float: left;
-}
+    }
 
-.main-nav {
-    float: right;
-    padding-top: 0;
-    padding-bottom: 0;
-}
 
-.main-nav ul {
- margin-right: 10%;
-}
+    li {
+        font-size: 1.3vw;
+    }
 
-h1 {
-    margin-top: 4%;
-}
 
-.name, .main-nav,
-li 
-{
-    font-size: 2vw;
-    display: inline-block;
+
+    #searchEng {
+        top: 200px;
+        left: 200px;
+    }
+
+
+    #searchInput {
+        width: 50%;
+        font-size: 1vw;
+        margin-left: 10%;
     
-}  
+    }
 
 
-.name a, .main-nav a {
-margin-left: 15px;
-}
+    #submit {
+        width: 15%;
+        font-size: 1vw;
+        margin-left: 50%;
+    }
 
- #pikachu-icon {
-  width: 6%;
-  margin-top: 3%;
-  float: left;
- }
-
-
- li {
-     font-size: 1.3vw;
- }
-
-
-
- #searchEng {
-    top: 200px;
-    left: 200px;
- }
-
-
- #searchInput {
-    width: 50%;
-    font-size: 1vw;
-    margin-left: 10%;
-   
- }
-
-
- #submit {
-    width: 15%;
-    font-size: 1vw;
-    margin-left: 50%;
- }
-
- .main-footer {
-    font-size: 1vw;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
+    .main-footer {
+        font-size: 1vw;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
 }
 
 
