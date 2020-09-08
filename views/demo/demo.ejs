@@ -9,75 +9,86 @@
 </header>
 
     <div class="wrap">
-        <h3 id="pokeGachaName"> <b>Name:</b> Bulby!</h3>
-        <h3 id="pokeGachaName"> <b>Bulby is: </b> <span id="mood" name="pokeMood">Hungry :( </span> </h3>
-        
-        <p id="pokeEat" name="pokeEat"> </p>
-        <p id="levelUp" name="levelUp"> </p>
-        <p>You have feed your pokemon <span id="count" name="count">0</span> times</p>
-        <p id="evolve" name="evolve">Your pokemon hasn't evolved yet :(</p>
-        <img class="pokeGacha" src="https://i.gifer.com/WnES.gif" alt="pokemonPlaceholder">
-        <br>
-        <button onclick="feedPoke()" id="feedButton"> Feed </button>
-        <br>
-        <button id="shareButton"> Share ➤ </button>
-
-        <p id="pokemonShow">Click <a href="/pokemon/bulbasaur">here</a> to learn more about your pokemon :3</p>
-
-
-        <footer class="bottomNav">
-            <div class="navContainer">
-            <ul class="bottomNavList">
-                <li>
-                    <a class="links" href="/users"> Home <img class="imgResize" src="https://www.iconsdb.com/icons/preview/white/home-3-xxl.png" alt=""> </a>
-                   
-                </li>
-                <li>
-                    <a class="links" href="/"> Search
-                        <img class="imgResize" src="https://www.iconsdb.com/icons/preview/white/search-xxl.png" alt="">
-                    </a>
-                    
-                </li>
-                <li> 
-                    <a class="links" href="/types"> Types
-                    <img class="imgResize" src="https://www.iconsdb.com/icons/preview/white/tree-structure-xxl.png" alt="">
-                    </a>
-                    
-                </li>
-                <li> <a class="links" href="/signin"> Sign In  <img class="imgResize" src="https://www.iconsdb.com/icons/preview/white/user-xxl.png" alt=""> </a>
-                   
-                </li>
-            </ul>
+        <div>
+            <h3 id="pokeGachaName"> <b>Pokemon Name:</b> <%-baby%>!</h3>
+            <h3 id="pokeGachaName"> <b>Current mood: </b> <span id="mood" name="pokeMood">Hungry :( </span> </h3>
+            <p id="pokeEat" name="pokeEat"> </p>
+            <p id="levelUp" name="levelUp"> </p>
+            <p>You have feed your pokemon <span id="count" name="count">0</span> times</p>
+            <p id="evolve" name="evolve">Your pokemon hasn't evolved yet :(</p>
         </div>
-        </footer>
 
-        <script>
-            let pokeEat = '<b> Yummy! <3 Bulby enjoyed his treat! </b>';
-            let levelUp = ' Level Up! +1 ! :^)';
-            let evolve = 'Your pokemon has evolved!';
-            let pokeMood = 'Full &hearts;';
-            let count = 1;
+        <div>
+            <img id="pokePic" class="pokeGacha" src="https://img.pokemondb.net/sprites/black-white/anim/normal/<%-baby%>.gif" alt="<%-baby%> pokemon">
+        </div>
+        <br>
+        <div>
+            <button onclick="feedPoke()" id="feedButton"> Feed </button>
+            <br>
+            <button id="shareButton"> Share ➤ </button>
+        </div>
 
-            function feedPoke() {
-                    evolution();
-                    document.getElementById("pokeEat").innerHTML = pokeEat;
-                    //document.getElementById("levelUp").innerHTML = levelUp;
-                    //alert(levelUp);
-                    document.getElementById("mood").innerHTML = pokeMood;
-                    document.getElementById("count").innerHTML = count++;
-                    
-            }
-
-            function evolution(){
-                if (count === 5){
-                    document.getElementById("evolve").innerHTML = 'Your pokemon just evolved!';
-                    
-                }
-            }
-        </script>
-
-
-
+        <p id="pokemonShow">Click <a href="/pokemon/<%-baby%>">here</a> to learn more about your pokemon :3</p>
     </div>
+
+    <footer class="bottomNav">
+        <div class="navContainer">
+        <ul class="bottomNavList">
+            <li>
+                <a class="links" href="/users"> Home <img class="imgResize" src="https://www.iconsdb.com/icons/preview/white/home-3-xxl.png" alt=""> </a>
+               
+            </li>
+            <li>
+                <a class="links" href="/"> Search
+                    <img class="imgResize" src="https://www.iconsdb.com/icons/preview/white/search-xxl.png" alt="">
+                </a>
+                
+            </li>
+            <li> 
+                <a class="links" href="/types"> Types
+                <img class="imgResize" src="https://www.iconsdb.com/icons/preview/white/tree-structure-xxl.png" alt="">
+                </a>
+                
+            </li>
+            <li> <a class="links" href="/signin"> Sign In  <img class="imgResize" src="https://www.iconsdb.com/icons/preview/white/user-xxl.png" alt=""> </a>
+               
+            </li>
+        </ul>
+    </div>
+    </footer>
+
+    <script>
+        let pokeEat = '<b> Yummy! <3 </b>';
+        let levelUp = ' Level Up! +1 ! :^)';
+        let evolve = 'Your pokemon has evolved!';
+        let pokeMood = 'Full &hearts;';
+        let count = 1;
+
+        function feedPoke() {
+                evolution();
+                document.getElementById("pokeEat").innerHTML = pokeEat;
+                //document.getElementById("levelUp").innerHTML = levelUp;
+                //alert(levelUp);
+                document.getElementById("mood").innerHTML = pokeMood;
+                document.getElementById("count").innerHTML = count++;
+        }
+
+        function evolution(){
+            if ('<%-teen%>' === ''){
+                document.getElementById("evolve").innerHTML = 'Your pokemon does not evolve';
+            } else if (count === 5){
+                if ('<%-adult%>' === ''){
+                    document.getElementById("evolve").innerHTML = 'Your pokemon has reached its last evolution!';
+                } else {
+                    document.getElementById("evolve").innerHTML = 'Your pokemon just evolved!';
+                }
+                document.getElementById('pokePic').src='https://img.pokemondb.net/sprites/black-white/anim/normal/<%-teen%>.gif'
+                
+            } else if (count === 10 && '<%-adult%>' !== ''){
+                document.getElementById("evolve").innerHTML = 'Your pokemon has reached its last evolution!';
+                document.getElementById('pokePic').src='https://img.pokemondb.net/sprites/black-white/anim/normal/<%-adult%>.gif'
+            } 
+        }
+    </script>
     </body>
 
