@@ -62,7 +62,7 @@ const show = async (req, res) => {
 
         //const evolves_to3 = baseEvolution.evolves_to[0]?.evolves_to;
         if(baseEvolution.evolves_to[0]){
-            var thirdEvolution = baseEvolution.evolves_to[0]?.evolves_to;
+            var thirdEvolution = baseEvolution.evolves_to[0].evolves_to;
         }
         let baby = baseEvolution.species.name;
         console.log('Base: ', baby);
