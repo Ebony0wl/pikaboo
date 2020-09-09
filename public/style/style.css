@@ -1,7 +1,6 @@
 
 /* mobile view  */
 
-
 html, body {
     overflow-x: hidden;
     overflow-y: hidden;
@@ -115,8 +114,32 @@ h2 {
     left: 10%;
 }
 
+.pokeGachaTop{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.pokeInfoGacha{
+    text-transform:capitalize;
+    padding:10px;
+}
+
+.pokeGachaStats{
+    padding:6px;
+}
+
+.pokeGachaStats h3{
+    margin-top: 0;
+    margin-bottom: 0;
+    margin: 5px; 
+}
+
+
 #pokeGachaName {
     text-align: center;
+    font-size: 200%;
+    background-color: #80a96fdb;
+    margin: 10px 35px 10px 35px;
 }
 
 .pokeGacha {

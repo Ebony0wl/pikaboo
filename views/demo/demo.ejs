@@ -1,7 +1,7 @@
 <%- include('../partials/head-p.ejs') %>
 
 <body class="demoSize">
-<header class="main-header">
+<header class="main-header" style="padding:10px 0px 0px 0px; margin-left: auto;">
     <div class="container clearfix">
         <h1 class="name"> Poke-Dachi </h1> 
         <img id="pikachu-icon" src="/images/pikachu.svg" alt="pikachu-head-icon">
@@ -9,26 +9,40 @@
 </header>
 
     <div class="wrap">
-        <div>
-            <h3 id="pokeGachaName"> <b>Pokemon Name:</b> <%-baby%>!</h3>
-            <h3 id="pokeGachaName"> <b>Current mood: </b> <span id="mood" name="pokeMood">Hungry :( </span> </h3>
-            <p id="pokeEat" name="pokeEat"> </p>
-            <p id="levelUp" name="levelUp"> </p>
-            <p>You have feed your pokemon <span id="count" name="count">0</span> times</p>
-            <p id="evolve" name="evolve">Your pokemon hasn't evolved yet :(</p>
+        <div class="pokeGachaTop">
+            <div class="pokeInfoGacha">
+                <h2 id="pokeGachaName" name="pokeGachaName"> <b>It's a <%-baby%>!</b></h2>
+            </div>
+
+            <div class="pokeGachaStats">
+                <form name='yourName'>
+                    <h3 id='pokeNamefield'>Name:
+                        <input type="text" name='userName' placeholder='<%-baby%>' style="width:auto;">
+                        <input type="submit" onclick="nameIt(); return false">
+                    </h3>
+                </form>
+                <h3 > <b>Current mood: </b> <span id="mood" name="pokeMood" style="color:red;">Hungry :( </span> </h3>
+                <h3>You have feed your pokemon <span id="count" name="count">0</span> times</h3>
+                <h3 id="evolve" name="evolve">Feed your pokemon to evolve it!</h3>
+            </div>
+
+            <p id="pokeEat" name="pokeEat" style="margin: 10px;"> </p>
+            <%#<p id="levelUp" name="levelUp"> </p>%>
         </div>
 
-        <div>
+        <div class="pokeGachaPic">
             <img id="pokePic" class="pokeGacha" src="https://img.pokemondb.net/sprites/black-white/anim/normal/<%-baby%>.gif" alt="<%-baby%> pokemon">
         </div>
+
         <br>
-        <div>
-            <button onclick="feedPoke()" id="feedButton"> Feed </button>
+        
+        <div class="pokeGachaButtons">
+            <button onclick="feedPoke(); time=setTimeout(timeOut, 2000);" id="feedButton"> Feed </button>
             <br>
             <button id="shareButton"> Share ➤ </button>
         </div>
 
-        <p id="pokemonShow">Click <a href="/pokemon/<%-baby%>">here</a> to learn more about your pokemon :3</p>
+        <p id="pokemonShow">Click <a id="pokeSearch" href="/pokemon/<%-baby%>">here</a> to learn more about your pokemon :3</p>
     </div>
 
     <footer class="bottomNav">
@@ -59,7 +73,7 @@
 
     <script>
         let pokeEat = '<b> Yummy! <3 </b>';
-        let levelUp = ' Level Up! +1 ! :^)';
+        //let levelUp = ' Level Up! +1 ! :^)';
         let evolve = 'Your pokemon has evolved!';
         let pokeMood = 'Full &hearts;';
         let count = 1;
@@ -69,25 +83,43 @@
                 document.getElementById("pokeEat").innerHTML = pokeEat;
                 //document.getElementById("levelUp").innerHTML = levelUp;
                 //alert(levelUp);
-                document.getElementById("mood").innerHTML = pokeMood;
+                //document.getElementById("mood").innerHTML = 'Hungry :(';
                 document.getElementById("count").innerHTML = count++;
         }
 
         function evolution(){
             if ('<%-teen%>' === ''){
-                document.getElementById("evolve").innerHTML = 'Your pokemon does not evolve';
+                //document.getElementById("evolve").innerHTML = 'Your pokemon does not evolve, reload to get a new pokemon';
+                alert('Your pokemon does not evolve, reload to get a new pokemon');
             } else if (count === 5){
+                document.getElementById("pokeGachaName").innerHTML = "It's a <%-teen%>!";
                 if ('<%-adult%>' === ''){
+                    document.getElementById("mood").innerHTML = pokeMood;
                     document.getElementById("evolve").innerHTML = 'Your pokemon has reached its last evolution!';
+                    alert('Your pokemon has reached its last evolution! Refresh to get a new pokemon.');
                 } else {
-                    document.getElementById("evolve").innerHTML = 'Your pokemon just evolved!';
+                    //document.getElementById("evolve").innerHTML = 'Your pokemon just evolved!';
+                    alert("Your pokemon just evolved!");
                 }
-                document.getElementById('pokePic').src='https://img.pokemondb.net/sprites/black-white/anim/normal/<%-teen%>.gif'
-                
+                document.getElementById('pokePic').src='https://img.pokemondb.net/sprites/black-white/anim/normal/<%-teen%>.gif';
+                document.getElementById('pokeSearch').href="/pokemon/<%-teen%>";
             } else if (count === 10 && '<%-adult%>' !== ''){
+                document.getElementById("mood").innerHTML = pokeMood;
                 document.getElementById("evolve").innerHTML = 'Your pokemon has reached its last evolution!';
+                alert('Your pokemon has reached its last evolution! Refresh to get a new pokemon.');
                 document.getElementById('pokePic').src='https://img.pokemondb.net/sprites/black-white/anim/normal/<%-adult%>.gif'
+                document.getElementById("pokeGachaName").innerHTML = "It's a <%-adult%>!";
+                document.getElementById('pokeSearch').href="/pokemon/<%-teen%>";
             } 
+        }
+
+        function timeOut(){
+            document.getElementById("pokeEat").innerHTML = '';
+        }
+
+        function nameIt(){
+            document.getElementById('pokeNamefield').innerHTML='Name: ' + document.yourName.userName.value;
+            console.log(document.yourName.userName.value);
         }
     </script>
     </body>
